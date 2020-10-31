@@ -1,0 +1,39 @@
+Exercise 5
+Due Tuesday by 12:30pm  Points 40  Submitting a file upload Available Jun 26 at 9:30am - Jun 26 at 12:30pm about 3 hours
+1. Create decl-algorithm.txt :
+
+1a. prompt the user for their lucky number (integer).
+
+1b. prompt the user for their favorite movie (text)
+
+1c. prompt the user for their age (decimal)
+
+1d. prompt the user for their first letter in their name (single character)
+
+1e. output these data values in a sentence with appropriate lablels.
+
+2. write decl.cpp from decl-algorithm.txt
+
+3. Create lighthouse-algorithm.txt with these requirements:  to determine how far away a boat can see a lighthouse at sea. 
+
+3a. Prompt the user to enter the height of the lighthouse, in feet, with any number of decimal digits (for example, 100 or 55.5)
+3b. Calculate the distance in miles.
+
+Here's how to calculate distance: distance in miles = square root of: 0.8 times the height in feet
+3c. Output the answer with a label and with both the input and output values, like a 100 foot tall lighthouse can be seen from 9 miles away, or
+
+What's the lighthouse height in feet? 100.001
+
+A 100.001 foot tall lighthouse can be seen from 9 miles away
+
+4. Write Lighthouse.cpp from Lighthouse-algorithm.txt.
+
+5. submit the following files:
+
+lighthouse-algorithm.txt
+
+lighthouse.cpp
+
+decl-algorithm.txt
+
+decl.cpp

@@ -1,0 +1,66 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Use text file inputted temperature and convert from celsius to farenheit.
+
+2. Requirements
+INPUT:
+celsius - the celsius temperature to be inputted from the text file "temps.txt"
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+Input celsius value(s) from text file "temps.txt"
+Convert celsius to farenheit via F = 9 / 5 * C + 32
+The program should end when a sentinel value of -999 is entered from the file as the input
+Modify the screen output statement so that it echoes the input Celsius temperature in addition
+Express celsius value w/o formatting
+Express farenheit value w/ formatting
+
+OUTPUT:
+farenheit - the farenheit values after the conversion
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+celsius - a decimal temperature value that will be inputted in the text file, no formatting
+farenheit - a decimal temperature value that will be inputted in the text file, w/ formatting to one decimal
+fin - the input variable for files
+
+3. Instructions
+10 Output user introduction
+20 Output user instructions
+30 Input celsius value (from file)
+40 Convert to farenheit
+50 Output farenheit value (to console) (with the celsius value)
+60 Go to next line
+70 If value is -999 or EOF, skip to instruction 90
+80 Go back to instruction 30
+90 DONE!
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: values go until end of file
+	Input values if any: -40, 0, -40.00
+	Expected results:
+
+	Input celsius = -40
+	Convert to farenheit = -40.0 (formatted to one decimal)
+	Output -40 celcius is -40 farenheit
+	Input celsius = 0
+	Convert to ferenheit = 32.0 (formatted to one decimal)
+	Output 0 celsius is 32 farenheit
+	Input celcius = -40.00
+	Convert to farenheit = -40.0 (formatted to one decimal)
+	Output -40.00 celsius is -40.0 farenheit
+
+Test Case #2: specific scenario
+
+	What is being tested: end program when -999 is reaches
+	Input values if any: -40, -999
+	Expected results:
+
+	Input celsius = -40
+	Convert to farenheit = -40.0 (formatted to one decimal)
+	Output -40 celcius is -40 farenheit
+	Input celsius = -999
+	-999 = terminate loop

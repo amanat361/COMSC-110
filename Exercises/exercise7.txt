@@ -1,0 +1,35 @@
+Exercise 7
+Due Thursday by 12:30pm  Points 40  Submitting a file upload Available Jun 28 at 9:30am - Jun 28 at 11:59pm about 14 hours
+1. Use the algorithm template to write an algorithm to calculate the average height of everyone in the classroom, named averageHeight-algorithm.txt
+
+2. Use the program template to write averageHeight.cpp from the algorithm.
+
+3. Based on the program digitalClock.cpp write a program named Odometer.cpp that simulates a car odometer.
+
+4. Write an algorithm for a 4 function calculator named calculator-algorithm.txt
+
+5. Write a program named calculator.cpp from calculator-algorithm.txt
+
+example: (after introduction...)
+
+Please enter first number: 2
+
+Please enter second number: 5
+
+Please enter operator [1= addition  2= subtraction  3= multiplcation  4= division]: 3
+
+2 * 5 = 10
+
+Another calculation [Y=yes or N=no]: N
+
+6. Please submit the following files:
+
+averageHeight-algorithm.txt
+
+averageHeight.cpp
+
+odometer.cpp
+
+calculator-algorithm.txt
+
+calculator.cpp

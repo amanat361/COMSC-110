@@ -1,0 +1,119 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Play the card game war between human and computer.
+
+2. Requirements
+INPUT:
+none (values are randomized)
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+generate a random number from 2-14 to represent a card for the computer
+Output the computer's card's value, outputting 2-10 as that value,
+but output 11 as Jack, 12 as Queen, 13 as King, and 14 as Ace
+generate a random number from 0-3 to represent a card's suit for the computer
+Output the computer's card's suit, but output 0 as Spades, 1 as Diamonds, 2 as Hearts, and 3 as Clubs
+generate a random number from 2-14 to represent a card for the user
+Output the user's card's value, outputting 2-10 as that value,
+but output 11 as Jack, 12 as Queen, 13 as King, and 14 as Ace
+generate a random number from 0-3 to represent a card's suit for the user
+Output the user's card's suit, but output 0 as Spades, 1 as Diamonds, 2 as Hearts, and 3 as Clubs
+Determine the winner and output the winner, if tie, go again
+See if user would like to play again
+
+OUTPUT:
+computer's card number
+computer's card suit
+example: Computer's card is a 4 of Diamonds
+the user's card number
+the user's card suit
+example: Human's card is a 4 of Clubs
+winner - output who on the game, or a tie
+example: It's a tie.
+play again prompt
+example: "Want to play again? [y/n]: "
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[integer] computerNumber - a random integer between 2-14 representing the computer's card number
+[integer] computerSuitNumber - a random integer between 0-3 that represents the computer's suit (spades, diamonds, hearts, clubs)
+[string] computerSuitName - a suit either spades diamonds hearts or clubs that is gotten from computerSuitNumber
+[integer] userNumber - a random integer between 2-14 representing the user's card number
+[integer] userSuitNumber - a random integer between 0-3 that represents the user's suit (spades, diamonds, hearts, clubs)
+[string] userSuitName - a suit either spades diamonds hearts or clubs that is gotten from userSuitNumber
+[string] winner - the winning message
+[string] computerCard - the computer's card as a string
+[string userCard - the user's card as a string
+[chat] continue - sentinel value to determine if the user wants to continue or not
+
+3. Instructions
+10 Output user introduction
+20 computerNumber = random number between 2-14
+30 computerSuitNumber = random number between 0-3
+40 if computerSuitNumber = 0
+40a computerSuitName = "Spades"
+50 else if computerSuitNumber = 1
+50a computerSuitName = "Diamonds"
+60 else if computerSuitNumber = 2
+60a computerSuitName = "Hearts"
+70 else if computerSuitNumber = 3
+70a computerSuitName = "Clubs"
+80 userNumber = random number between 2-14
+90 userSuitNumber = random number between 0-3
+100 if userSuitNumber = 0
+100a userSuitName = "Spades"
+110 else if userSuitNumber = 1
+110a userSuitName = "Diamonds"
+120 else if userSuitNumber = 2
+120a userSuitName = "Hearts"
+130 else if userSuitNumber = 3
+130a userSuitName = "Clubs"
+140 If computerNumber is between 2-10 skip to instruction 150. If not:
+140a 11 = Jack, 12 = Queen, 13 = King, 14 = Ace
+150 Output computerNumber and computerSuitName
+160 If userNumber is between 2-10 skip to instruction 170. If not:
+160a 11 = Jack, 12 = Queen, 13 = King, 14 = Ace
+170 Output userNumber and userSuitName
+180 If the computer's card's value is LESS than the human's card's value, output "Human wins!"
+190 else If the computer's card's value is EQUAL TO the human's card's value, output "It's a tie."
+200 else If the computer's card's value is GREATER than the human's card's value, output "Computer wins!"
+210 Output prompt to play again
+220 Input continue
+230 If continue = y, go back to instruction 20
+240 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+Expected results:
+
+*Introduction*
+
+Computer's card is a 4 of Diamonds 
+Human's card is a 4 of Clubs It's a tie. 
+
+Computer's card is a King of Spades 
+Human's card is a Ace of Clubs 
+Human wins!
+Want to play again? Y
+
+Computer's card is a Jack of Spades
+Human's card is a 10 of Clubs
+Computer wins!
+Want to play again? N
+
+What is happening:
+
+computerNumber = random # between 2-14 = 4
+computerSuitNumber = random # between 0-3 = 1
+computerSuitName = Diamonds (1 = Diamonds)
+userNumber = random # between 2-14 = 4
+userSuitNumber = random # between 0-3 = 0
+userSuitName = Spades (0 = Spades)
+Output "computer's card is a computerNumber (4) of computerSuitName (diamonds)"
+Output "useer's card is a userNumber (4) of userSuitName (spades)"
+userNumber = computerNumber therefore tie
+Output "It's a tie!"
+Output prompt to go again - "Want to play again? "
+Get responce and loop / end

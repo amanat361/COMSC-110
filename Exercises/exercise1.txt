@@ -1,0 +1,66 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1a. Explain in words what are the 3 control structures and how each of the 3 control structures
+works in general.
+
+The three different kinds of control structures are sequence, selection, and repetition.
+
+Sequence:
+The sequence control structure is when a program executes a list of statements in order. For example, baking a cake. The recipie would have a list of things to do in order, such as add eggs, then add flour, etc.
+
+Selection:
+The selection control structure is when one function is preformed from a list of options (multiple choice). In C++, this can be seen with if/else if/else statements. An example is playing a game and chosing which character you would like to play as, you would SELECT the character, hence selection.
+
+Repetition:
+The repetition control structure is when you keep on repeating a function as long as the set condition remains true. An example is when getting the average age of people in a classroom, keep on getting the age of every person until all of the people have been accounted for. The "get age" function would repeat as long as the condition "still people left" remains true.
+
+1b. Explain in words what are the 3 kinds of programming errors and give examples.
+
+The three kinds of programming errors are syntax errors, logic errors, and runtime/execution errors.
+
+Syntax Errors:
+A syntax error is essentially a 'gramatical' error within your code, as the program doesn't follow the language's requirements. For example, forgetting a semi-colon at the end of a line is a syntax error. Most if not all of the time, syntax errors are the programmer's fault. A syntax error would not allow the program to run/execute.
+
+Logic Errors:
+A logic error is an error with how the program functions, and usually a program will still run/execute even if it has logic errors. In other words, a logic error would create an output that was not indented. For example, giving a value to the wrong variable may create logic errors. Another example is dividing two numbers instead of subtracting them.
+
+Runtime/Execution Errors:
+These types of errors aren't necessarily the programmers fault as they happen when the computer is asked to do something it simply can not do. For example, if the program requires the computer to open a locked file, which it can't, it will have an execution error. These errors will cause programs to not run. Another example is trying to open a file that does not exist.
+
+1c. What are the 5 functions of all computers?
+
+The five functions of all computers are taking in input, processing the input, giving a user output, storing results, and communication. Taking in input can be something such as asking the user to type in their name (i.e. "Bob"). Storing results would be the computer remembering the user as "Bob" (storage not to be confused with memory). Processing the input and giving the user output for example can be the computer saying "Hello Bob". Communication would be the ability for the computer to communicate with other computers, for example the internet.
+
+1d. Explain in words what is a statement and what is an expression and what is the difference.
+
+A statement is a complete line of code that usually ends with a semicolon (in C++) and preforms some function. An expression is a part of a statement that provides its functionality. In my own words, the way I see it is that a statement is a sentence, and expressions are the nouns and verbs of the sentence that give it meaning.
+
+1e. What are the 2 major categories of software and the 3 subcategories of each.
+
+Applications
+- Productivity
+- Education
+- Entertainment
+
+System
+- Operating Systems
+- Utilities
+- Language Translators
+	- Compilers
+	- Interpreters
+	- Assemblers
+
+1f. What are the 3 language translators and how do they work? They translate what to what?
+
+The three language translators are Compilers, Interpreters, and Assemblers.
+
+Compiler:
+A compiler translates high-level languages such as C++ and Java into something the computer can understand like Assembly (Binary). A compiler turns a code file (i.e. program.cpp) into an executable (i.e. program.exe). Even though compiling takes time, a compiled file can be used over and over again without recompiling.
+
+Interpreters:
+An interpreter would temporarily execute/run a high-level language such as C++, however instead of running the whole program like a compiler, an interpreter would do this one statement at a time. Also, an interpreter does nto produce an executable file. Interpreted code is run through an IDE making it much more convenient, but slow.
+
+Assembler:
+An assembler would translate low-level code (something like assembly) into something the machine/computer can understand. Similar to compiled programs nolonger needing the compiler, assembled programs no longer need an assembler. Also, an executable file is created that can be rerun.
+

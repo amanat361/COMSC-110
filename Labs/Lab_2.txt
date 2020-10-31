@@ -1,0 +1,90 @@
+
+Lab 2
+
+    Due Sunday by 11:59pm Points 25 Submitting a file upload File Types txt and cpp Available Jul 5 at 11:30am - Jul 8 at 11:59pm 4 days
+
+1. Create nsaEncoder0-algorithm.txt to prompt the user to enter a line of text, of any length, with spaces and punctuation. Then "encode" the entered text so that each character is converted to the next character in the ASCII code. That is, convert 'A' to 'B', '4' to '5', '*' to '+', etc. So the word "Hello" will appear as "Ifmmp" in encoded form. Remember a line of text contains multiple characters, and each character has an ASCII value, and by adding 1 to that ASCII value results in the next character in the ASCII table.
+
+2. write nsaEncoder0.cpp from nsaEncoder0-algorithm.txt
+Refer to example programs like partialAlphabet.cpp from Examples in Content Browser.
+For example, your code will look something like this:
+
+
+// encode string s by adding 1 to the ASCII code of each character
+string s = "Hello, World"; // an example string (text)
+int i; // loop index
+
+for (i = 0; i < s.length(); i=i+1)
+{
+s[i] = s[i] + 1; // bump the ASCII code by 1
+}//for i
+
+encodes to "Ifmmp-!Xpsme". s[i] retrieves the char value that's at position i in the string s.
+
+For example, your program execution will look something like this:
+Enter a line of text:
+I really like computer programming!
+J!sfbmmz!mjlf!dpnqvufs!qsphsbnnjoh"
+
+3. Create nsaDecoder0-algorithm.txt to prompt the user to enter a line of text, of any length, with spaces and punctuation. Then "decode" the entered text so that each character is converted to the previous character in the ASCII code. That is, convert 'B' to 'A', '5' to '4', '+' to '*', etc. So the code "Ifmmp" will appear as "Hello" in decoded form. Remember a line of text contains multiple characters, and each character has an ASCII value, and by subtracting 1 to that ASCII value results in the previous character in the ASCII table.
+
+4. write nsaDecoder0.cpp from nsaDecoder0-algorithm.txt
+Refer to example programs like partialAlphabet.cpp from Examples in Content Browser.
+For example, your code will look something like this:
+
+
+// decode string s by subtracting 1 from the ASCII code of each character
+string s = "Ifmmp-!Xpsme"; // an example
+
+int i; // loop index
+for (i = 0; i < s.length(); i = i+1)
+{
+ s[i] = s[i] - 1; // bump the ASCII code by -1
+}// for i
+
+
+decodes to “Hello, World”. s[i] retrieves the char value that's at position i in the string s.
+
+For example, your program execution will look something like this:
+Enter a line of text:
+J!sfbmmz!mjlf!dpnqvufs!qsphsbnnjoh"
+I really like computer programming!
+
+HINT: To avoid having to type encoded text, you can copy and paste it at the console input prompt. On a Windows 8.1 PC or Mac, it's ctrl-c to copy and then right-click (or control-click), to Paste in the C++ execution environment.
+
+ 
+
+5. Modify nsaEncoder0-algorithm.txt to create nsaEncoder1-algorithm.txt so the user is prompted to input the
+the name of an existing text file to be encoded. Input the text from the input file the user specifies and encode it a line at a time, and output each
+line of encoded text to an output file after it’s encoded AND to the console. Name the output file secret.txt. Think of nsaEncoder0-algorithm.txt as the "proof of concept" so you know this can be done.
+High level overview of the algorithm instructions (excluding our course standards and the details of how to do the encoding :
+100 prompt for the input file name
+200 open the input file for input
+300 open secret.txt for output
+400 input a line from the input file
+500 encode the line ***need to list the individual instructions for how to do this! ***
+600 output the encoded line to the output file
+700 output the encoded line to the console
+750 if EOF skip to instruction 800 else skip to instruction 400
+800 close output file
+900 close input file
+
+6. Write nsaEncoder1.cpp from nsaEncoder1-algorithm.txt
+
+7. Modify nsaDecoder0-algorithm.txt to create nsaDecoder1-algorithm.txt so each line from the input file secret.txt is decoded, a line at a time, and output each
+line of decoded text to the console. Think of nsaDecoder0-algorithm.txt as the "proof of concept" so you know this can be done.
+High level overview of the algorithm instructions (excluding our course standards and the details of how to do the decoding :
+100 open secret.txt for input
+200 input a line from the input file
+300 decode the line ***need to list the individual instructions for how to do this! ***
+400 output the decoded line to the console
+500 if EOF skip to instruction 600 else skip to instruction 200
+600 close input file
+
+8. Write nsaDecoder1.cpp from nsaDecoder1-algorithm.txt
+
+9. Please submit the following files:
+nsaEncoder1-algorithm.txt
+nsaEncoder1.cpp
+nsaDecoder1-algorithm.txt
+nsaDecoder1.cpp

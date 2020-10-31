@@ -1,0 +1,12 @@
+Exercise 4
+Due Jun 25 by 12:30pm  Points 40  Submitting a file upload Available Jun 25 at 9:15am - Jun 25 at 12:40pm about 3 hours
+This assignment was locked Jun 25 at 12:40pm.
+1. write the program mySavingsPlan1.cpp from the algorithm mySavingsPlan1-algorithm.txt but complete the test case first.
+
+mySavingsPlan1-algorithm.txtPreview the document
+
+2. Please submit:
+
+mySavingsPlan1-algorithm.txt
+
+mySavingsPlan1.cpp

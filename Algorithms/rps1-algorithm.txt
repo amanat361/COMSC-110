@@ -1,0 +1,116 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Play rock, paper, scissors game. For reference see: www.worldrps.com
+The 2-player game will be interactive: human vs. computer!
+
+2. Requirements
+INPUT:
+userPlay - whether the player chooses rock, paper, or scissors (or quit)
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+Human input will be through the keyboard, entering R or r for rock, P or p for paper, S or s for scissors, or Q or q to quit.
+Computer input will be randomly generated (0-rock, 1-paper, 2-scissors).
+Add score keeping to the game to track the numbers of computer wins and human wins -- do not count ties.
+Output the numbers of computer wins and human wins after all play ends.
+The game will replay until the human player decides to quit.
+
+OUTPUT:
+prompt for userPlay - "Choose: [R=rock, P=paper, S=scissors, or Q=quit]: "
+invalid input - "Please only enter a single character, R, P, S, or Q."
+quit message - "Thank you for playing!"
+userPlay - what the user chose
+computerPlay - what the computer chose
+winner - who won the game
+userScore - the number of times the user has won
+computerScore - the number of times the computer has won
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[character] userPlay - a letter representing their choice, R (rock), P (paper), S (scissors), or Q for quit
+[character] computerPlay - the character equivalent for randomChoice. For example, if the randomChoice is 2, computerChoice is set to S (for scissors)
+[integer] userScore - a counter for each time the user wins
+[integer] computerScore - a counter for each time the computer wins
+
+3. Instructions
+10 Output user introduction
+15 Output user instructions
+20 Output prompt for userPlay
+30 Intput userPlay
+35 Convert userPlay to uppercase (incase they put lowercase)
+36 Input validation (if it is R, P, S, or Q)
+37 If not, go back, ask for proper input and go back to instruction 30
+40 computerPlay = random number between 0-2
+45 Convert computerPlay from 012 to RPS
+46 if computerPlay = 0 ... computerPlay = R
+47 if computerPlay = 1 ... computerPlay = P
+48 if computerPlay = 2 ... computerPlay = S
+50 Determine winner
+
+55 if userPlay = computerPlay, tie
+
+60 else if userPlay = Q
+65 Output "Thanks for playing!"
+66 Quit program
+
+70 else if userPlay = R
+75 if computerPlay = P, computer wins + 1, winner = computer
+76 else if computerPlay = S, user wins + 1, winner = user
+
+80 else if userPlay = P
+85 if computerPlay = S, computer wins + 1, winner = computer
+86 else if computerPlay = R, user wins + 1, winner = user
+
+90 else if userPlay = S
+95 if computerPlay = R, computer wins + 1, winner = computer
+96 else if computerPlay = P, user wins + 1, winner = user
+
+100 Output computerPlay and userPlay
+110 Output winner
+120 Output amount of computer wins
+125 Output amount of user wins
+130 Loop back to instruction 20
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: a normal RPS game
+Input values if any: p, r, p, s, q
+Expected results:
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: p
+Computer: S, Human: P, Computer wins
+
+Choose: [Rock,Paper,Scissors,Quit]: p
+Computer:P, Human:P, tie
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: r
+Computer: S, Human: R, you win!
+Computer wins: 1 Human wins: 1
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: p
+Computer: R, Human: P, you win!
+Computer wins: 1 Human wins: 2
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: s
+Computer: P, Human: S, you win!
+Computer wins: 1 Human wins: 3
+
+Choose: [Rock,Paper,Scissors,Quit]: q
+Thanks for playing!
+
+Test Case #2: specific scenario
+
+What is being tested: user inputs the wrong thing
+Input values if any: rock
+Expected results:
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: rock
+Please only input a single character, R, P, S, or Q.
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: R
+Computer: S, Human: R, you win!
+Computer wins: 0 Human wins: 1
+
+Choose: [Rock,Paper,Scissors,Quit]: Q
+Thanks for playing!

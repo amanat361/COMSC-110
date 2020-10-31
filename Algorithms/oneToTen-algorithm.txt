@@ -1,0 +1,78 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+guess a number between 1 and 10.
+
+2. Requirements
+INPUT:
+user's guess - a number between one and ten
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+generate a random number between 1 and 10
+prompt the user for a guess between 1 and 10
+input validation if guess is between 1 and 10
+output response whether guess was correct / incorrect
+
+OUTPUT:
+error message = "I really want a number between 1 and 10."
+correct message = "You guessed it!"
+incorrect message = "Try again..."
+Prompt 1 = "What is your guess [1-10]? "
+intro message = "I'm thinking of a number from 1 to 10."
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[integer] number - randomly generated number between 1 and 10, whole number
+[integer] userGuess - user inputed guess that should be between 1 and 10, whole number
+
+3. Instructions
+10 Output introduction and instructions
+20 Output intro message (different from introduction)
+30 Output Prompt 1
+40 Input user's guess
+50 Check if input is valid
+55 If valid skip to instruction 60
+56 Output error message
+57 Skip to instruction 40
+60 Check if guess matches number
+70 If correct skip to instruction 90
+80 Output incorrect message
+85 Skip to instruction 30
+90 Output correct message
+100 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: Example posted on canvas
+	Input values if any: 5, 3, 0, 7
+	Expected results:
+
+	I'm thinking of a number from 1 to 10.
+	What is your guess [1-10]? 5
+	Try again...
+	What is your guess [1-10]? 3
+	Try again...
+	What is your guess [1-10]? 0
+	I really want a number between 1 and 10.  
+	What is your guess [1-10]? 7
+	You guessed it!
+
+Test case #2: non int value inputed
+
+	What is being tested: specific scenario
+	Input values if any: 5, triangle, 3
+	Expected results:
+
+	I'm thinking of a number from 1 to 10.
+	What is your guess [1-10]? 5
+	Try again...
+	What is your guess [1-10]? triangle
+	Infinitely:
+	What is your guess [1-10]? I really want a number between 1 and 10.
+	What is your guess [1-10]? I really want a number between 1 and 10.
+	What is your guess [1-10]? I really want a number between 1 and 10.
+	What is your guess [1-10]? I really want a number between 1 and 10.
+	What is your guess [1-10]? I really want a number between 1 and 10.
+	etc...

@@ -1,0 +1,101 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Read all song titles from a text file, and randomly select and output titles in a loop until the user wishes to stop
+
+2. Requirements
+INPUT:
+file name that has the list of songs in it
+y or n to continue generating a random song from the list
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+user introduction
+prompt for filename
+open file for input
+read through lines in the file
+add value of song to list of songs if input is valid
+play a random song in the array if the user wants to
+
+OUTPUT:
+user introduction
+prompt for filename: "What is the name of the file with the list of songs: "
+song name
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[text] objective = "Read all song titles from a text file, and randomly select and output titles in a loop until the user wishes to stop"
+[text] fileName = the name of the input file
+[integer] number = randomly generated number between 1-200
+[integer] nSongs = 0 - initially empty list
+[constant integer] MAX_SONGS = 200 - list capacity
+[text array] songList = an array with capacity of MAX_SONGS (200)
+[text] temp = temporary value that holds the song name
+[character] playSong = y/n if the user wants to play the next song
+[true/false] inputValid = input validation parameter
+[input file] fin = input file variable
+
+3. Instructions
+10 Output user introduction and instructions
+20 Prompt user for filename
+30 Input filename
+40 Open input file if file is good, if not good (doesn't exist) throw I/O error
+50 if no text in file skip to instruction 130
+60 inputValid = true
+70 get line in the file and set it to temp
+80 if temp has more than 0 characters (line is not blank) input is valid
+90 if not(input is valid and nSongs < MAX_SONGS) then skip to instruction 130
+100 add temp to songList with index of nSongs
+110 nSongs = nSongs + 1
+120 go back to instruction 50
+130 output prompt if user wants to play a song
+140 input y/n
+150 set input to lowercase
+160 if user does not say y or Y skip to instruction 200
+170 generate random number between 1 and number of songs (nSongs)
+180 output songList at the index of that random number
+190 go back to instruction 130
+200 Done
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: a list of 3 songs with a blank line
+Input values if any:
+file called songs.txt
+songs listed as:
+song1
+song2
+---blank line---
+song3
+Expected results:
+
+user intro and instruction
+Please create a text file with 200 songs listed on separate lines.
+What is the name of the file with the list of songs: songs.txt
+Play a song? [Y/N]: Y
+song2
+Play a song? [Y/N]: Y
+song3
+Play a song? [Y/N]: Y
+song1
+Play a song? [Y/N]: N
+
+What is happening:
+
+computer opens valid file called songs.txt
+each line in the file is added to array songList
+line 3 is blank so it does not count
+user says Y to play a song
+random number between 1-3 is generated = 3
+console outputs songList index 3 which is song2
+loop goes back and asks if user wants to play a song
+user says Y to play a song
+random number between 1-3 is generated = 4
+console outputs songList index 4 which is song3
+loop goes back and asks if user wants to play a song
+user says Y to play a song
+random number between 1-3 is generated = 2
+console outputs songList index 2 which is song1
+loop goes back and asks if user wants to play a song
+user says N and the program quits

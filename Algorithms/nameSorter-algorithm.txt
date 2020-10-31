@@ -1,0 +1,172 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Read names in a text file, sort them alphabetically, and output them to the screen.
+
+2. Requirements
+INPUT:
+a text file created by the user called myFriends.txt that includes a list of names
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+A. The names are to be stored in an input text file, one name per line. 
+B. Prompt the user to enter the filename via the console keyboard.
+C. Skip any blank lines that may be in the input file.
+D. Skip any exact duplicates that may be in the input file.
+E. Allow up to 5 names. Stop reading the file after the end-of-file is reached, or the 5th name is
+added and the list reaches its capacity.
+F. Sort the list alphabetically, from A to Z, according to the first letter in the name string.
+
+OUTPUT:
+user introduction
+prompt for creating the file and filename
+the names in alphabetical order
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[struct] Names - has value of [text] names - name from the list
+[text] objective = "Read names in a text file, sort them alphabetically, and output them to the screen."
+[text] fileName = the name of the input file
+[constant integer] SIZE = 5 - size of the array
+[integer] nNames = 0 - count how many names have been inputted
+[array] make a value of struct type "Names" called listOfNames that is an array with capacity of SIZE
+another value of struct type "Names" called aName that stores the current name value from the file
+[integer] c = loop index of outter loops
+[integer] x = loop index of inner loops
+[true/false] inputValid = true - a variable that determines where the input is valid or not
+^^^ skip blank lines and duplicates in the file
+[file input] fin = input file variable
+
+3. Instructions
+10 Output user introduction and instructions
+20 Ask for filename from user
+30 output prompt for filename
+40 input filename
+50 if file exists, continue, if not, terminate program
+60 if there is no text left in file, skip to instruction 130
+70 set inputValid to true
+80 set line in file to variable aName value of name
+90 if line is blank, set inputValid to false
+100 if line is duplicate, set inputValid to false
+110 if nNames < SIZE AND input is valid, add aName to listOfNames (index of nNames) and increment nNames
+120 go back to instruction 60
+130 close file for input
+140 c = 0
+150 for c < nNames (if not, skip to 220)
+160 x = 0
+170 for x < nNames (if not, skip to 200)
+180 if lowercase first character of first name is greater than lowercase first character of next name, switch them, if not, go to the second name, and do the same with that name and the one after it until all the names have been checked
+190 x = x + 1
+195 go back to 170
+200 go back to 150
+210 c = c + 1
+220 output the name to the console
+250 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: a list of names with blank lines, duplicates, and capital differences
+Input values if any:
+a text file called myFriends.txt
+in the file:
+sasha
+bob
+
+Apple
+apple
+Apple
+pancake
+elephant
+dog
+
+Expected results:
+Apple
+bob
+elephant
+pancake
+sasha
+
+(it skips the blank line, the two duplicates of apple, doesn't do more than 5 inputs, and sorts them alphabetically)
+
+What happens:
+output user intro and instructions
+"what is the filename"
+input myFriends.txt
+file exists, continue
+text in file, continue
+aName = first line in file = sasha
+sasha is longer than 0 characters so continue
+sasha is not a duplicate so continue
+nNames > SIZE and input is valid so continue
+add sasha to listOfNames
+aName = next line in file = bob
+bob is longer than 0 characters so continue
+bob is not a duplicate so continue
+nNames > SIZE and input is valid so continue
+add bob to listOfNames
+aName = next line in file =
+is 0 characters so don't continue
+aName = next line in file = Apple
+Apple is longer than 0 characters so continue
+Apple is not a duplicate so continue
+nNames > SIZE and input is valid so continue
+add Apple to listOfNames
+aName = next line in file = apple
+apple is longer than 0 characters so continue
+apple is a duplicate so don't continue
+aName = next line in file = Apple
+Apple is longer than 0 characters so continue
+Apple is a duplicate so don't continue
+aName = next line in file = pancake
+pancake is longer than 0 characters so continue
+pancake is not a duplicate so continue
+nNames > SIZE and input is valid so continue
+add pancake to listOfNames
+aName = next line in file = elephant
+elephant is longer than 0 characters so continue
+elephant is not a duplicate so continue
+nNames > SIZE and input is valid so continue
+add elephant to listOfNames
+aName = next line in file = dog
+dog is longer than 0 characters so continue
+dog is not a duplicate so continue
+nNames < SIZE so don't continue
+list of names is now:
+sasha
+bob
+Apple
+pancake
+elephant
+take first name and compare to second
+sasha vs bob
+b < s so you swap them
+new list of names is:
+bob
+sasha
+Apple
+pancake
+elephant
+now keep taking sasha and go through the test of the list with the same technique
+you end up with this list:
+bob
+Apple
+pancake
+elephant
+sasha
+now you take the next name, bob, and do the same process, as the program loops
+you get this
+Apple
+bob
+pancake
+elephant
+sasha
+you do this for every word as the loop goes until c = nNames
+you end up with an alphabetized list
+Apple
+bob
+elephant
+pancake
+sasha
+now, this is outputted to the console line by line
+program ends

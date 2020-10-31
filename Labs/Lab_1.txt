@@ -1,0 +1,23 @@
+Lab 1
+Due Wednesday by 11:59pm  Points 25  Submitting a file upload Available Jun 21 at 12:30pm - Jun 27 at 11:59pm 6 days
+1. complete the algorithm changeDue1-algorithm.txt using the algorithm template
+
+changeDue1-algorithm.txtPreview the document
+
+2. write a program based only on your completed changeDue1-algorithm.txt using the partially started program changeDue1.cpp
+
+to calculate change due in a transaction using these U.S. bills – no cents:
+
+$1  $2  $5  $10  $20  $50   $100   $500   $1,000   $5,000   $10,000   $100,000
+
+For example, a “cash payment” of $45,000 is made by “tendering” a $100,000 bill. The “change due” is $55,000. It’s “paid out” in five $10,000 bills, and one $5,000 bill.
+
+In another example, a cash payment of $44,999 is made by tendering five $10,000 bills. The change due is $5,001. It’s paid out in one $5,000 bill, and one $1 bill.
+
+changeDue1.cppPreview the document
+
+3. submit:
+
+completed algorithm changeDue1-algorithm.txt
+
+completed program changeDue1.cpp

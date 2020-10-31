@@ -1,0 +1,25 @@
+Exercise 6
+Submit Assignment
+Due Wednesday by 12:30pm  Points 40  Submitting a file upload Available Jun 27 at 9:30am - Jun 27 at 11:59pm about 14 hours
+1. Write algorithm oneToTen-algorithm.txt for the user to guess a number between 1 and 10.
+
+generate a random number between 1 and 10.  prompt the user for a guess of a number between 1 and 10.  input validation: if usersGuess is < 1 or > 10 then output error message.  if incorrect guess: "Try again..." else "You guessed it!"  
+
+For example:
+
+I'm thinking of a number from 1 to 10.
+What is your guess [1-10]? 5
+Try again...
+What is your guess [1-10]? 3
+Try again...
+What is your guess [1-10]? 0
+I really want a number between 1 and 10.  
+What is your guess [1-10]? 7
+You guessed it!
+2. write oneToTen.cpp from oneToTen-algorithm.tx
+
+3. Please submit the following files:
+
+oneToTen-algorithm.txt
+
+oneToTen.cpp

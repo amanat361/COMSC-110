@@ -1,0 +1,25 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+
+2. Requirements
+INPUT:
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+
+OUTPUT:
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+
+3. Instructions
+10 
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested:
+Input values if any:
+Expected results:
+What is happening:

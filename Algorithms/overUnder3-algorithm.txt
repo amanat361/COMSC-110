@@ -1,0 +1,160 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+
+2. Requirements
+1. guessing 1 and 100
+2. input validation
+3. check if the user guess has already been guessed and provide feeback "you alread guessed " guess
+4. did the user guess the random target number
+5. check if the user guess is too high and provide feedback "that's too high---guess again"
+6. check if the suer guess is too low and provide feedback "that's too low---guess again"
+
+INPUT:
+user's guess - the user must input an integer as their guess
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+1. data items
+2. user introduction
+3. user guess input with input validation
+4. check if the user guess is correct, or too high or too low, or is a duplicate guess
+
+OUTPUT:
+user introduction
+prompt for user guess
+error message for input validation
+error message for repeats
+message if it is too high or too low
+message to guess again
+message if the user is correct
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+integer number = random number out of 10 - randomly generated number
+constant integer MAX_GUESSES = 100 - list capacity
+integer nGuesses = 0 - initially empty list
+integer temp - temporary value that holds the user's guess
+integer i - for duplicate loop indexing (to go through all of the values within the list)
+inputValid = true - a value that determines if the input is valid (true/false)
+objective = "Guess a random number between 1-100" - program objective
+
+3. Instructions
+10 Output user introduction
+20 Output intro message (different from introduction) "I'm thinking of a number from 1 to 10."
+30 inputValid = true
+40 prompt for user guess
+50 input user's guess as temp
+60 if temp is not between 1-100 then output "I really want a number between 1 and 100." and set inputValid to false
+70 i = 0
+80 while i < nGuesses, i = i + 1
+90 if temp = userGuess[i] (if temp has been guessed before within the list) then output
+90a "You've already guessed " userGuess[i] and then set inputValid to false
+100 if input is valid and nGuesses < MAX_GUESSES then set userGuess[nGuesses + 1] to equal temp
+100a by doing this, it is adding the guess to the list userGuess
+110 if input is valid continue, if not skip to instruction 150
+120 if the user guess is correct output "You guessed it!" and skip to instruction 160
+130 if the user guess is too low output "That's too low. Try again..."
+140 if the user guess is too high output "That's too high. Try again..."
+150 go back to instruction 40
+160 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: the user guessing a number with a few mistakes such as repeating numbers, a number too high, and incorrect guesses
+Input values if any: 50, 50, 150, 80, 70, 60, 55, 51, 52, 53
+Expected results:
+
+I'm thinking of a number from 1 to 100.
+What is your guess [1-100]? 50
+That's too low. Try again...
+What is your guess [1-100]? 50
+You've already guessed 50
+What is your guess [1-100]? 150
+I really want a number between 1 and 100.
+What is your guess [1-100]? 80
+That's too high. Try again...
+What is your guess [1-100]? 70
+That's too high. Try again...
+What is your guess [1-100]? 60
+That's too high. Try again...
+What is your guess [1-100]? 55
+That's too high. Try again...
+What is your guess [1-100]? 51
+That's too low. Try again...
+What is your guess [1-100]? 52
+That's too low. Try again...
+What is your guess [1-100]? 53
+You guessed it!
+
+What is happening:
+
+correct guess is set to 53 as a random number between 0 and 100
+Prompt 1: "I'm thinking of a number from 1 to 100"
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 50
+50 is valid between 1-100
+50 has not been guessed before
+50 does not equal the correct guess of 53
+50 is not greater than 53
+50 IS less than 53
+Output "Your guess is too low. Try again...
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 50
+50 is valid between 1-100
+50 HAS been guessed before
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 150
+50 is NOT valid between 1-100
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 80
+80 is valid between 1-100
+80 has not been guessed before
+80 does not equal the correct guess of 53
+80 IS greater than 53
+Output "That's too high. Try again..."
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 70
+70 is valid between 1-100
+70 has not been guessed before
+70 does not equal the correct guess of 53
+70 IS greater than 53
+Output "That's too high. Try again..."
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 60
+60 is valid between 1-100
+60 has not been guessed before
+60 does not equal the correct guess of 53
+60 IS greater than 53
+Output "That's too high. Try again..."
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 55
+55 is valid between 1-100
+55 has not been guessed before
+55 does not equal the correct guess of 53
+55 IS greater than 53
+Output "That's too high. Try again..."
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 51
+51 is valid between 1-100
+51 has not been guessed before
+51 does not equal the correct guess of 53
+51 is not greater than 53
+51 IS less than 51
+Output "That's too low. Try again..."
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 52
+52 is valid between 1-100
+52 has not been guessed before
+52 does not equal the correct guess of 53
+52 is not greater than 53
+52 IS less than 51
+Output "That's too low. Try again..."
+Prompt for guess: "What is your guess [1-100]?"
+Input temp - user inputs 53
+53 is valid between 1-100
+53 has not been guessed before
+53 DOES equal the correct guess of 53
+Output "You guessed it!"
+End program

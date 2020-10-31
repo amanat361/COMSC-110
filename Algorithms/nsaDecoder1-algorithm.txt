@@ -1,0 +1,64 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Enter a line of text then decode the text to the previous character in the ASCII code
+
+2. Requirements
+INPUT:
+Input file to encode with text in the file
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+Get file name from user
+Open input file (secret.txt)
+For each character in the file, bump it down one in the ASCII code (b = a, 2 = 1, @ = ?, etc.)
+Output encoded text to the console
+Close secret.txt
+
+OUTPUT:
+Output user introduction
+Output decoded text to the console
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[string] objective - "Enter a line of text then encode the text to the next character in the ASCII code."
+[string] text - text inputted by the user in their text file
+[string] input file - the name of the file that is inputted by the user
+[integer] loop index - a letter like 'c' to be used in a for loop
+[ifstream] fin - a variable to hold the value of an inputted file (reading from a file)
+
+3. Instructions
+10 Output user introduction
+20 Ask user for name of input file
+25 Input name of input file
+30 Open file for input
+35 Check if file is good
+40 If there is no text in the input file, skip to instruction 100
+50 Get a line of text from input file
+60 For each character in the line of text, move that character ASCII code - 1
+70 Output decoded text to the console
+80 If EOF skip to instruction 90 else skip to instruction 50
+90 Close file
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: Decoding Ifmmp-!Xpsme"
+	Input values if any: secret.txt with Ifmmp-!Xpsme" written on its first line
+	Expected results:
+
+Output user introduction
+Output: Hello, World!
+
+Test Case #2: specific scenario
+
+	What is being tested: decoding multiple lines
+	Input values if any:
+	Ifmmp-!Xpsme"
+	Ep!nvmujqmf!mjoft!xpsl@
+	Expected results:
+
+Output user introduction
+Output:
+Hello, World!
+Do multiple lines work?

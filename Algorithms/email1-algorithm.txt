@@ -1,0 +1,309 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+A utility for copying emails from one file to another
+
+2. Requirements
+INPUT:
+iFileName - the user should input the name of the input file, or push enter for default
+oFileName - the user should input the name of the output file, or push enter for default
+enterToContinue - the user should push enter to continue after verifying that the files are correct
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+user introduction
+prompt user for input filename
+check if filename is valid
+---filename between 0 and 5 characters
+---filename does not end with .txt
+---filename starts with a space
+check if user just pushed enter isntead of inputting text
+if enter key is true, iFilename = dFilename and dFilename = "copyPasteMyEmails.txt"
+if enter key is not pressed, input file name remains the same and default file = input file
+Prompt user for output filename
+check if filename is valid
+---filename between 0 and 5 characters
+---filename does not end with .txt
+---filename starts with a space
+Check if user just pushed enter instead of inputting text
+If enter key is true, oFilename = dFilename
+Output label for input file name, and iFileName
+If filename wasn't valid, output error
+Output label for output file name, and oFileName
+If filename wasn't valid, output error
+Ask user to press enter to continue
+
+OUTPUT:
+output user introduction
+output a prompt to the console using dFileName
+output a prompt to the console using dFileName
+output label for the input file name, and iFileName
+output an error for an invalid filename if invalid
+output label for the output file name, and oFileName
+output an error for an invalid filename if invalid
+output a prompt to press ENTER key to continue
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[text] objective = "A utility for copying emails from one file to another" (program objective)
+[text] dFileName = "fileContainingEmails.txt" (the default file name)
+[text] iFileName (the input filename inputted by the user if not default)
+[text] oFileName (the output filename inputted by the user if not default)
+[text] enterToContinue (for the user to push enter to continue after confirming the filenames)
+[true / false] enterKey = false (see if the user just pushes the enter key)
+[true / false] inputValid = true (see if the user inputted a valid input file name)
+[true / false] outputValid = true (see if the user inputted a valid output file name)
+
+3. Instructions
+10 Output user introduction
+20 Output prompt for input filename
+"Enter input filename [default: " dFileName "]: "
+30 Input iFileName
+40 if iFilename length is greater than 0 AND less than 5 characters, inputValid = false
+50 if iFileName length = 0 (if no text is inputted) then enterKey = true
+60 if iFileName starts with a space then inputValid = false
+70 if iFileName does not end with ".txt" then inputValid = false
+80 if enterKey = true then set iFileName to dFileName and set dFileName to "copyPasteMyEmails.txt"
+90 if enterKey = false then set dFileName to iFileName
+100 set enterKey to false
+110 Output "Enter output filename [default" " dFileName "]: "
+120 Input oFileName
+130 if oFilename length is greater than 0 or less than 5 characters, outputValid = false
+140 if oFileName length = 0 (if no text is inputted) then enterKey = true
+150 if oFileName starts with a space then outputValid = false
+160 if oFileName does not end with ".txt" then outputValid = false
+170 if oFileName length = 0 (if no text is inputted) then enterKey = true
+180 if enterKey is true, then set oFileName to dFileName
+185 if inputValid = false then outputValid = false
+190 Output "Input file: " iFileName and end line
+200 if inputValid = false then output error for invalid filename
+210 Output "Output file: " oFileName and end line
+220 if outputValid = false then output error for invalid filename
+230 Output a new line and say "Press enter to continue..."
+240 Input enterToContinue
+250 DONE
+
+4. Test Cases
+
+Test Case #1:
+
+What is being tested: using both defaults for input and output
+
+Enter input filename [default: fileContainingEmails.txt]: 
+Enter output filename [default: copyPasteMyEmails.txt]: 
+Input file: fileContainingEmails.txt
+Output file: copyPasteMyEmails.txt
+
+press ENTER key to continue:
+
+What is happening:
+
+10 Output user introduction
+20 Output prompt for input filename
+"Enter input filename [default: fileContainingEmails.txt]: "
+30 Input iFileName
+User pushes enter
+40 if iFileName length = 0 (if no text is inputted) then enterKey = true
+enterKey = true
+50 if enterKey = true then set iFileName to dFileName and set dFileName to "copyPasteMyEmails.txt"
+iFileName = "fileContainingEmails.txt" and dFilename = "copyPasteMyEmails.txt"
+60 if enterKey = false then set dFileName to iFileName
+enterKey = true so skip this
+70 set enterKey to false
+enterKey = false
+80 Output "Enter output filename [default: " dFileName "]: "
+"Enter output filename [default: copyPasteMyEmails.txt]: "
+90 Input oFileName
+user pushes enter
+100 if oFileName length = 0 (if no text is inputted) then enterKey = true
+enterKey = true
+110 if enterKey is true, then set oFileName to dFileName
+oFilename = "copyPasteMyEmails.txt"
+120 Output "Input file: " iFileName and end line
+"Input file: fileContainingEmails.txt"
+130 Output "Output file: " oFileName and end line
+Output "Output file: copyPasteMyEmails.txt"
+140 Output a new line and say "Press enter to continue..."
+"Press enter to continue..."
+150 Input enterToContinue
+user pushes enter
+200 DONE
+
+...or...  Test Case #2:
+
+What is being tested: using non-default for input and default for output
+
+Enter input filename [default: fileContainingEmails.txt]: x.txt 
+Enter output filename [default: x.txt]: 
+Input file: x.txt
+Output file: x.txt
+
+press ENTER key to continue:
+
+What is happening:
+
+10 Output user introduction
+20 Output prompt for input filename
+"Enter input filename [default: fileContainingEmails.txt]: "
+30 Input iFileName
+User types "x.txt" and pushes enter
+40 if iFileName length = 0 (if no text is inputted) then enterKey = true
+"x.txt" is 5 characters long, 5 > 0 so enterKey still = false
+50 if enterKey = true then set iFileName to dFileName and set dFileName to "copyPasteMyEmails.txt"
+enterkey = false so skip this
+60 if enterKey = false then set dFileName to iFileName
+dFileName = "x.txt"
+70 set enterKey to false
+enterKey = false
+80 Output "Enter output filename [default: " " dFileName "]: "
+"Enter output filename [default: x.txt]: "
+90 Input oFileName
+user pushes enter
+100 if oFileName length = 0 (if no text is inputted) then enterKey = true
+enterKey = true
+110 if enterKey is true, then set oFileName to dFileName
+oFileName = "x.txt"
+120 Output "Input file: " iFileName and end line
+"Input file: x.txt"
+130 Output "Output file: " oFileName and end line
+Output "Output file: x.txt"
+140 Output a new line and say "Press enter to continue..."
+"Press enter to continue..."
+150 Input enterToContinue
+user pushes enter
+200 DONE
+
+...or... Test Case #3:
+
+What is being tested: using default for input and non-default for output
+
+Enter input filename [default: fileContainingEmails.txt]: 
+Enter output filename [default: copyPasteMyEmails.txt]: y.txt 
+Input file: fileContainingEmails.txt
+Output file: y.txt
+
+press ENTER key to continue:
+
+What is happening:
+
+10 Output user introduction
+20 Output prompt for input filename
+"Enter input filename [default: fileContainingEmails.txt]: "
+30 Input iFileName
+User pushes enter
+40 if iFileName length = 0 (if no text is inputted) then enterKey = true
+enterKey = true
+50 if enterKey = true then set iFileName to dFileName and set dFileName to "copyPasteMyEmails.txt"
+iFileName = "fileContainingEmails.txt" and dFilename = "copyPasteMyEmails.txt"
+60 if enterKey = false then set dFileName to iFileName
+enterKey = true so skip this
+70 set enterKey to false
+enterKey = false
+80 Output "Enter output filename [default" " dFileName "]: "
+"Enter output filename [default: copyPasteMyEmails.txt]: "
+90 Input oFileName
+user types "y.txt" and pushes enter
+100 if oFileName length = 0 (if no text is inputted) then enterKey = true
+enterKey = false because "y.txt" is 5 characters and 5 > 0
+110 if enterKey is true, then set oFileName to dFileName
+enterKey = false so skip this
+120 Output "Input file: " iFileName and end line
+"Input file: fileContainingEmails.txt"
+130 Output "Output file: " oFileName and end line
+Output "Output file: y.txt"
+140 Output a new line and say "Press enter to continue..."
+"Press enter to continue..."
+150 Input enterToContinue
+user pushes enter
+200 DONE
+
+...or... Test Case #4
+
+What is being tested: using non-default file names for input and output
+
+Enter input filename [default: fileContainingEmails.txt]: x.txt 
+Enter output filename [default: x.txt]: y.txt 
+Input file: x.txt
+Output file: y.txt
+
+press ENTER key to continue:
+
+What is happening:
+
+10 Output user introduction
+20 Output prompt for input filename
+"Enter input filename [default: fileContainingEmails.txt]: "
+30 Input iFileName
+user types "x.txt" and pushes enter
+40 if iFileName length = 0 (if no text is inputted) then enterKey = true
+"x.txt" is 5 characters long and 5 > 0 so enterKey still = false
+50 if enterKey = true then set iFileName to dFileName and set dFileName to "copyPasteMyEmails.txt"
+enterKey = false so skip this
+60 if enterKey = false then set dFileName to iFileName
+dFileName = "x.txt"
+70 set enterKey to false
+enterKey = false
+80 Output "Enter output filename [default:" " dFileName "]: "
+"Enter output filename [default: copyPasteMyEmails.txt]: "
+90 Input oFileName
+user types "y.txt" and pushes enter
+100 if oFileName length = 0 (if no text is inputted) then enterKey = true
+"y.txt" is 5 characters long and 5 > 0 so enterKey still = false
+110 if enterKey is true, then set oFileName to dFileName
+enterKey = false so skip this
+120 Output "Input file: " iFileName and end line
+Output "Output file: x.txt"
+130 Output "Output file: " oFileName and end line
+Output "Output file: y.txt"
+140 Output a new line and say "Press enter to continue..."
+"Press enter to continue..."
+150 Input enterToContinue
+user pushes enter
+200 DONE
+
+...or... Test Case #5
+
+What is being tested: invalid input file name - "file.xtx" (does not end with ".txt")
+
+10 Output user introduction
+20 Output prompt for input filename
+"Enter input filename [default: fileContainingEmails.txt]: "
+30 Input iFileName
+User types file.xtx and pushes enter
+40 if iFilename length is greater than 0 AND less than 5 characters, inputValid = false
+filename is 8 characters so inputValid remains true
+50 if iFileName length = 0 (if no text is inputted) then enterKey = true
+filename is 8 characters so enterKey remains false
+60 if iFileName starts with a space then inputValid = false
+iFileName starts with 'f' so inputValid remains true
+70 if iFileName does not end with ".txt" then inputValid = false
+iFileName ends with ".xtx" so inputValid = false
+80 if enterKey = true then set iFileName to dFileName and set dFileName to "copyPasteMyEmails.txt"
+enterKey = false so skip this
+90 if enterKey = false then set dFileName to iFileName
+dFileName = "file.xtx"
+100 set enterKey to false
+enterKey = false
+110 Output "Enter output filename [default: file.xtx]: "
+120 Input oFileName
+user pushes enter
+130 if oFilename length is greater than 0 AND less than 5 characters, outputValid = false
+filename is 0 characters which is not greater than 0 so outputValid remains true
+140 if oFileName length = 0 (if no text is inputted) then enterKey = true
+filename is exactly 0 characters so enterKey = true
+condition was met so other if statements don't run
+180 if enterKey is true, then set oFileName to dFileName and if inputValid = false then outputValid = false
+oFileName = "file.xtx"
+inputValid = false so outputValid = false
+190 Output "Input file: " iFileName and end line
+"Input file: file.xtx"
+200 if inputValid = false then output error for invalid filename
+"Filename is invalid."
+210 Output "Output file: " oFileName and end line
+"Output file: file.xtx"
+220 if outputValid = false then output error for invalid filename
+"Filename is invalid."
+230 Output a new line and say "Press enter to continue..."
+"Press enter to continue..."
+240 Input enterToContinue
+user presses enter
+250 DONE

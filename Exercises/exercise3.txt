@@ -1,0 +1,52 @@
+EXERCISE 3
+
+Due Thursday by 12:30pm  Points 40  Submitting a file upload  File Types txt and cpp Available Jun 21 at 9am - Jun 22 at 11:59pm 1 day
+1a. Create from the programTemplate.cpp a new program named aboutMe.cpp.  Create 4 data items: luckyNumber (integer) to represent your favorite number, amountEarned (decimal) to represent how much money you want to save for the rest of your life, movie (text) to represent your favorite movie, initial (character) to represent your first, middle, or last initial in your name.
+
+1b. Modify the program to assign initial values upon declaration.
+
+1c. Output a label (text) and the value of each variable
+
+2. Write an algorithm using the algorithm template to calculate how many days old you will be by the due date of this assignment.
+To prepare you will need to figure out:
+A. the number of years in which you've lived, including your birth year and the current year
+B. the number of leap years in your life
+C. the number of days in your birth year before you were born, including your day of birth
+D. the number of days remaining in the current year after the due date for this lab, excluding that
+date. 
+
+Use date duration calculator app at http://www.timeanddate.com/date/duration.html (Links to an external site.)Links to an external site. to check your calculations
+
+
+Partial algorithm:
+set the value days to 0
+Add to "days" the result of this multiplication: 365 times the number of years
+in which you've lived.
+Add to "days" the number of those years that were leap years.
+Subtract from "days" the number of days in your birth year before you were
+born.
+Subtract from "days" the number of days remaining in the current year after the
+due date.
+Output the value of "days" with an appropriate label.
+
+For the example shown below, these numbers are 22, 5, 151, and 102, respectively
+
+Input: the 4 programmer-assigned whole number values listed in the requirements, as
+calculated by you. Output: Three lines: one showing your date of birth, one showing the due date, and
+one with your calculated age in days.
+
+Example. The 3 lines of output should look something like this, labeled as you wish, with your
+program's values (not including the program introduction):
+DOB: May 31, 1993
+Due: Sept 20, 2014
+Age: 7782 days
+
+3. Write a program named MyDays.cpp to calculate how many days old you will be
+on the due date for this lab. You do not have to use your true birth date, but it should be more than 10
+years ago and less than 100. You do have to look up the due date and apply it correctly.
+
+4. Please submit the following files:
+
+aboutMe.cpp
+myDays-algorithm.txt
+myDays.cpp

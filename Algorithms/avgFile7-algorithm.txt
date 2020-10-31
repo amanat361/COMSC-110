@@ -1,0 +1,191 @@
+Name: Samin Amanat
+Course and section: COMSC-110-1021
+
+1. Objective: find maximum score, minimum score, average score, and number of scores greater than average of all the scores from input file
+
+2. Requirements:
+INPUT: 
+-fileName
+-each score from the input file
+
+PROCESSING:
+1. data
+2. introduction
+3. get input filename from user
+4. determine how many scores are in the input file for storing the values
+5. input values from input file
+6. calculate the average score
+7. find highest score
+8. find lowest score
+9. find how many scores are greater than the average score
+
+OUTPUT: 
+-objective
+-author
+-prompt the user for input file name
+-if count = 0 then output error message "Sorry, ", fileName, " is empty."
+-label "The scores from the file ", fileName, " are: "
+-each score from the input file
+-label "The average of ", count, " scores is: "
+-averageScore
+-label "The highest score is: "
+-maxScore
+-label "The lowest score is: "
+-minScore
+-label "The number of scores greater than the average is: "
+-nGreater
+
+DATA:
+-fileName (text) = input file name
+-line (text) = a line from the input file
+-averageScore (decimal) = calculated average of all the scores from the input file
+-count (integer) = number of scores in the input file
+-totalScores (integer) = sum of all the scores in the input file
+-maxScore (integer) = highest score of all the scores in the input file
+-minScore (integer) = lowest score of all the scores in the input file
+-nGreater (integer) = number of scores greater than the average score
+-i (integer) = indice for traversing each element in the array
+-scores (dynamic array) = holds all the scores read from the input file, each score is betwen 0-100
+
+3. Algorithm instructions (each instruction has its own unique label for reference in use with test cases)
+10 output objective
+20 output author
+***get the input file name from the user ***
+30 output prompt "What is the input file name? "
+40 input fileName
+***determine how many scores are in the file***
+45 count = 0
+50 open fileName
+55 if input file is not accessible, skip to instruction 999
+57 if reached end of the file, skip to instruction 90
+60 read a line from the input file
+70 count = count + 1
+80 skip to instruction 57
+***create dynamic array***
+90 close input file
+95 if count = 0 then skip to instruction 990
+100 create scores with 0-(count-1) elements for each score input from file
+***input all the scores into the array***
+105 i = 0
+110 open input file
+120 if reached end of file, skip to instruction xxx
+130 input scores[i]
+140 i= i+1
+150 skip to instruction 120
+***sum all the scores ***
+160 i = 0
+170 totalScores = 0
+180 maxScore = scores[0]
+190 minScore = scores[0]
+200 if i >= count then skip to instruction 260
+210 totalScores = totalScores + score[i]
+220 if maxScore < scores[i] then maxScore =scores[i]
+230 if minScore > scores[i] then minScore = scores[i]
+240 i = i + 1
+250 skip to instruction 200
+***calculate average score***
+260 averageScore = totalScores / count
+***calculate the number of scores greater than the average ***
+270 i =0
+280 nGreater = 0
+290 if i >= count then skip to instruction 310
+300 if scores[i] > averageScore then nGreater = nGreater + 1
+***output results***
+310 output label "The scores from the file ", fileName, " are: "
+320 i = 0 
+330 if i >= count then skip to instruction 360
+340 output scores[i], " "
+350 skip to instruction 330
+360 output label "The average of ", count, " scores is: ", averageScore
+370 output label "The highest score is: ", maxScore
+380 output label "The lowest score is: ", minScore
+390 output label "The number of scores greater than the average is: ", nGreater
+990 if count = 0 then output "Sorry the file is empty."
+999 end
+
+4. Test cases
+
+Test case #1: input file has 3 scores in the file scores.txt
+10 output objective
+20 output author
+***get the input file name from the user ***
+30 output prompt "What is the input file name? "
+40 fileName = scores.txt
+***determine how many scores are in the input file for storing the values***
+count = 0
+open for input scores.txt
+scores.txt has numbers 1-5 on five seperate lines
+file is good, don't end program
+theres 5 lines in the file so count = 5
+file closes
+count is not 0 so program does not output empty message
+scores[] holds the values of the lines in the file
+scores[0] = 1
+scores[1] = 2
+scores[2] = 3
+scores[3] = 4
+scores[4] = 5
+***calculate the average score***
+totalScores = 0
+maxScore = scores[0] = 1
+minScore = scores[0] = 1
+i = 0
+increment i through the loop
+loops through every value
+if maxScore < scores[i] then maxScore = scores[i]
+if minScore > scores[i] then minScore = scores[i]
+1 < 2 so maxScore = 2
+2 < 3 so maxScore = 3
+3 < 4 so maxScore = 4
+4 < 5 so maxScore = 5
+1 < 2 so minScore = 1
+1 < 3 so minScore = 1
+1 < 4 so minScore = 1
+1 < 5 so minScore = 1
+totalScore = totalScores + scores[i] - this sums all of the scores
+end loop
+averageScore = totalScore / count = 15 / 5 = 3
+***calculate the number of scores greater than the average***
+nGreater = 0
+i = 0
+increment i through the loop
+loops through every value
+if scores[i] > averageScore then nGreater = nGreater + 1
+1 < 3
+2 < 3
+3 = 3
+4 > 3 so nGreater = 1
+5 > 3 so nGreater = 2
+end loop
+***output results***
+"The scores from the file scores.txt are"
+"1"
+"2"
+"3"
+"4"
+"5"
+"The average of 5 scores is 3"
+"The highest score is: 5"
+"The lowest score is: 1"
+"The number of scores greater than the average is: 2"
+end program
+
+Test case #2: input file is empty
+
+
+Test case #3: input file not there
+
+
+Test case #4: only 1 score in the input file
+
+
+****When translating this algorithm into a program for our COMSC-110-8215 course class exercise: ***
+1. determine how many scores are in the input file
+2. create a dynamically sized array for that many scores
+3. use a void function to input the scores with an input parameter of 
+the dynamically sized array
+4. use a value returning function to calculate the average score
+5. use a value returning function to calculate the number of scores 
+greater than the average
+6. use a value returning function to find the highest score
+7. use a value returning function to find the lowest score

@@ -1,0 +1,209 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Calculate the average, highest, lowest scores and scores greater than average, using a linked list
+
+2. Requirements
+INPUT:
+file called "scores.txt"
+integer valued on lines of the file
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+read and save the scores to a linked list
+calculate the average
+count number of scores > average
+calculate min and max scores
+output results
+
+OUTPUT:
+list of scores from file
+average score
+maximum score
+minimum score
+scores > avg.
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[struct] Student = has value of score (the score of the student) and a link
+[text] objective = "Calculate average, min, and max, scores and how many > average."
+[file input] fin
+[integer] nGreater = 0 (number of scores greater than the average)
+[integer] count = 0 (the number of scores)
+[integer] scoreTotal = 0 (the sum of all of the scores)
+[integer] temp (temporary value for inputted score)
+[decimal] average (a decimal value holding the average score)
+[student] p (a variable to traverse through the linked list)
+[student] start = 0 (create an empty linked list)
+[integer] minScore = 0 (the lowest score of the list)
+[integer] maxScore = 0 (the highest score of the list)
+[student] aScore (make a new temporary score each time the loop repeats)
+
+3. Instructions
+10 Output user introduction
+20 Open text file for input
+30 If file is not good (does not exist, corrupt, locked, etc.) quit program
+40 If there are no lines left in file, skip to instruction 90
+50 make a new score each time the loop repeats as aScore
+60 read a score from the file and assign it to temp
+70 if temp >= 0 AND temp <= 100
+70a the created score = temp
+70b link list back to start
+70c linked list "start" = aScore
+70d count = count + 1
+80 go back to instruction 40
+90 close input file
+100 traverse through linked list, for every value, add that value to the sum
+110 average = scoreTotal / count
+120 traverse through linked list, for every value, if value > average then nGreater = nGreater + 1
+130 traverse through linked list, for every value, if maxScore < value then maxScore = value
+140 minScore = maxScore
+150 traverse through linked list, for every value, if minScore > value then minScore = value
+160 Output "The average of: " count " scores is: " average
+170 Output "The highest score is: " maxScore
+180 Output "The lowest score is: " minScore
+190 Output "The number of scores greater than the average is: " nGreater
+200 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: 5 numbers
+
+Input values if any: scores.txt has five lines with the values: "3, 1, (blank) , 4"
+
+Expected results:
+The average of 5 scores is: 2.5
+The highest score is: 4
+The lowest score is: 1
+The number of scores greater than the average is: 2
+
+What will happen:
+10 Output user introduction
+20 Open text file for input
+30 If file is not good (does not exist, corrupt, locked, etc.) quit program
+file is good
+40 If there are no lines left in file, skip to instruction 90
+there are lines left in file
+50 make a new score each time the loop repeats as aScore
+60 read a score from the file and assign it to temp
+temp = 3
+70 if temp >= 0 AND temp <= 100
+3 is between 0 and 100
+70a the created score = temp = 3
+70b link list back to start
+70c linked list "start" = aScore
+70d count = count + 1 = 0 + 1 = 1
+80 go back to instruction 40
+-----
+40 If there are no lines left in file, skip to instruction 90
+there are lines left in file
+50 make a new score each time the loop repeats as aScore
+60 read a score from the file and assign it to temp
+temp = 1
+70 if temp >= 0 AND temp <= 100
+1 is between 0 and 100
+70a the created score = temp = 1
+70b link list back to start
+70c linked list "start" = aScore
+70d count = count + 1 = 1 + 1 = 2
+80 go back to instruction 40
+-----
+40 If there are no lines left in file, skip to instruction 90
+there are lines left in file
+50 make a new score each time the loop repeats as aScore
+60 read a score from the file and assign it to temp
+temp = blank line
+70 if temp >= 0 AND temp <= 100
+input is not valid
+(skip to 80)
+80 go back to instruction 40
+-----
+40 If there are no lines left in file, skip to instruction 90
+there are lines left in file
+50 make a new score each time the loop repeats as aScore
+60 read a score from the file and assign it to temp
+temp = 4
+70 if temp >= 0 AND temp <= 100
+4 is between 0 and 100
+70a the created score = temp = 4
+70b link list back to start
+70c linked list "start" = aScore
+70d count = count + 1 = 2 + 1 = 3
+80 go back to instruction 40
+-----
+40 If there are no lines left in file, skip to instruction 90
+there are no more lines left in file, skip to instruction 90
+-----
+90 close input file
+-----
+100 traverse through linked list, for every value, add that value to the sum
+first value is index 0 which is 3
+scoreTotal (which equals 0) + value (which is 3) = 0 + 3 = 3
+scoreTotal is now equal to 3
+110 average = scoreTotal / count
+average = 3 / 3 = 1
+-----
+100 traverse through linked list, for every value, add that value to the sum
+next value is index 1 which is 1
+scoreTotal (which equals 0) + value (which is 1) = 3 + 1 = 4
+scoreTotal is now equal to 4
+110 average = scoreTotal / count
+average = 4 / 3 = 1.33334
+-----
+100 traverse through linked list, for every value, add that value to the sum
+first value is index 2 which is 4
+scoreTotal (which equals 0) + value (which is 4) = 4 + 4 = 8
+scoreTotal is now equal to 8
+110 average = scoreTotal / count
+average = 8 / 3 = 2.66667
+-----
+100 traverse through linked list, for every value, add that value to the sum
+no more values in list
+-----
+120 traverse through linked list, for every value, if value > average then nGreater = nGreater + 1
+first value is index 0 which is 3
+3 > average
+nGreater = nGreater + 1 = 0 + 1 = 1
+next value is index 1 which is 1
+1 < average
+next value is index 2 which is 4
+4 > average
+nGreater = nGreater + 1 = 1 + 1 = 2
+no more values in list
+-----
+130 traverse through linked list, for every value, if maxScore < value then maxScore = value
+maxScore = 0
+first value is index 0 which is 3
+3 > maxScore
+maxScore = 3
+next value is index 1 which is 1
+1 < maxScore
+next value is index 2 which is 4
+4 > maxScore
+maxScore = 4
+no more values in list
+-----
+140 minScore = maxScore
+minScore = 4
+-----
+150 traverse through linked list, for every value, if minScore > value then minScore = value
+first value is index 0 which is 3
+3 < minScore
+minScore = 3
+next value is index 1 which is 1
+1 < minScore
+minScore = 1
+next value is index 2 which is 4
+4 > minScore
+no more values in list
+-----
+160 Output "The average of: " count " scores is: " average
+"The average of 3 scores is 2.66667"
+170 Output "The highest score is: " maxScore
+"The highest score is 4"
+180 Output "The lowest score is: " minScore
+"The lowest score is 1"
+190 Output "The number of scores greater than the average is: " nGreater
+"The number of scores greater than the average is 2"
+200 DONE

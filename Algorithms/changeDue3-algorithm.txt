@@ -1,0 +1,299 @@
+Name: Samin Amanat
+Course: COMSC-110_1021
+
+1. Objective: Calculate change due in a transaction using these U.S. bills – no cents: $1, $2, $5, $10, $20, $50, $100, $500, $1000, $5000, $10000, and $100000 bills.
+
+2. Requirements:
+--INPUT: 
+amountOwed = 44999 - from text file on line one
+cashPaid = 50000 - from text file on line two
+amountOwed is always less than cashPaid.
+cashPaid cannot be zero or negative.
+
+--PROCESSING:
+Get input from the user from a text file called change.txt while prompting them correctly in the console
+The paid out bills should include the fewest number of bills. For example, do not include two $10 bills when you can include one $20 bill instead. 
+totalChangeDue = cashPaid - amountOwed
+changeDue = totalChangeDue
+thousand100 = changeDue / 100000
+changeDue = remainder from changeDue / 100000
+thousand10 = changeDue /10000
+changeDue = remainder from changeDue / 10000
+thousand5 = changeDue / 5000
+changeDue = remainder from changeDue / 5000
+thousand = changeDue / 1000
+changeDue = remainder from changeDue / 1000
+hundred5 = changeDue / 500
+changeDue = remainder from changeDue / 500
+hundred = changeDue /100
+changeDue = remainder from changeDue / 100
+fifty = changeDue / 50
+changeDue = remainder from changeDue / 50
+twenty = changeDue / 20
+changeDue = remainder from changeDue / 20
+ten = changeDue / 10
+changeDue = remainder from changeDue / 10
+five = changeDue / 5
+changeDue = remainder from changeDue / 5
+two = changeDue / 2
+changeDue = remainder from changeDue / 2
+one = changeDue
+
+--OUTPUT:
+objective
+author 
+user instructions: "set the amount owed and the cash paid amounts to calculate change due in all specified U.S. bills."
+label1: "amount owed: " 
+amountOwed
+label2: "amount cash paid: "
+cashPaid
+label3: "Change due: "
+totalChangeDue
+label4: "Change paid out in: "
+label5: "this many $100,000 bills: "
+thousand100
+label6: "this many $10,000 bills: "
+thousand10
+label7: "this many $5,000 bills: "
+thousand5
+label8: "this many $1,000 bills: "
+thousand
+label9: "this many $500 bills: "
+hundred5
+label10: "this many $100 bills: "
+hundred
+label11: "this many $50 bills: "
+fifty
+label12: "this many $20 bills: "
+twenty
+label13: "this many $10 bills: "
+ten
+label14: "this many $5 bills: "
+five
+label15: "this many $2 bills: "
+two
+label16: "this many $1 bills: "
+one
+
+--DATA:
+amountOwed-->>amount owed (integer)
+cashPaid-->>amount tendered to pay for the amount owed (integer)
+totalChangeDue-->>the difference between amountOwed and cashPaid (integer)
+changeDue-->>change due for each value of bills (integer)
+thousand100-->>number of $100000 bills (integer)
+thousand10-->>number of $10000 bills (integer)
+thousand5-->>number of $5000 bills (integer)
+thousand-->>number of $1000 bills (integer)
+hundred5-->>number of $500 bills (integer)
+hundred-->>number of $100 bills (integer)
+fifty-->>number of $50 bills (integer)
+twenty-->>number of $20 bills (integer)
+ten-->>number of $10 bills (integer)
+five-->>number of $5 bills (integer)
+two-->>number of $2 bills (integer)
+one-->>number of $1 bills (integer)
+fin - the input variable for files
+
+3. Algorithm Instructions
+10 Output instructiosn that tell the user to put the amountOwed and cashPaid on the proper lines
+15 Tell the user you will pause the program execution until they hit the enter key to check that file change.txt has amount owed on line 1 and cash paid on line 2
+20 get amountOwed from text file on line one
+25 get cashPaid from text file on line two
+30 Output "Amount owed: "
+35 Output amountOwed
+40 Output "Amount cash paid: "
+45 Output cashPaid
+  50 totalChangeDue = cashPaid - amountOwed
+  60 changeDue = totalChangeDue
+  70 thousand100 = changeDue / 100000
+  80 changeDue = remainder from changeDue / 100000
+  90 thousand10 = changeDue /10000
+  100 changeDue = remainder from changeDue / 10000
+  110 thousand5 = changeDue / 5000
+  120 changeDue = remainder from changeDue / 5000
+  130 thousand = changeDue / 1000
+  140 changeDue = remainder from changeDue / 1000
+  150 hundred5 = changeDue / 500
+  160 changeDue = remainder from changeDue / 500
+  170 hundred = changeDue /100
+  180 changeDue = remainder from changeDue / 100
+  190 fifty = changeDue / 50
+  200 changeDue = remainder from changeDue / 50
+  210 twenty = changeDue / 20
+  220 changeDue = remainder from changeDue / 20
+  230 ten = changeDue / 10
+  240 changeDue = remainder from changeDue / 10
+  250 five = changeDue / 5
+  260 changeDue = remainder from changeDue / 5
+  270 two = changeDue / 2
+  280 changeDue = remainder from changeDue / 2
+  290 one = changeDue
+300 Output "Change due: "
+301 Output totalChangeDue
+305 Output "Change paid out in: "
+310 Output "This many $100,000 bills: "
+315 Output thousand100
+320 Output "This many $10,000 bills: "
+325 Output thousand10
+330 Output "This many $5,000 bills: "
+335 Output thousand5
+340 Output "This many $1,000 bills: "
+345 Output thousand
+350 Output "This many $500 bills: "
+355 Output hundred5
+360 Output "This many $100 bills: "
+365 Output hundred
+370 Output "This many $50 bills: "
+375 Output fifty
+380 Output "This many $20 bills: "
+385 Output twenty
+390 Output "This many $10 bills: "
+395 Output ten
+400 Output "This many $5 bills: "
+405 Output five
+410 Output "This many $2 bills: "
+415 Output two
+420 Output "This many $1 bills: "
+425 Output one
+
+4. Test cases
+Test Case #1: 
+
+What is being tested: A cash payment of $44,999 is made by tendering five $10,000 bills.
+Input values if any: 44999, 50000
+Expected results: The change due is $5,001. It’s paid out in one $5,000 bill, and one $1 bill.
+
+What would happen:
+10 amount owed = 44999
+15 cash paid = 50000
+20 Output introduction
+30/35 Output "Amount owed: 44999"
+40/45 Output "Cash paid: 50000"
+50 totalChangeDue = 50000 - 44999 = 5001
+60 changeDue = totalChangeDue = 5001
+70 thousand100 = 5001 / 100000 = 0
+80 changeDue = 5001 % 100000 = 5001
+90 thousand10 = 5001 / 10000 = 0
+100 changeDue = 5001 % 10000 = 5001
+110 thousand5 = 5001 / 5000 = 1
+120 changeDue = 5001 % 5000 = 1
+130 thousand = 1 / 1000 = 0
+140 changeDue = 1 % 1000 = 1
+150 hundred5 = 1 / 500 = 0
+160 changeDue = 1 % 500 = 1
+170 hundred = 1 / 100 = 0
+180 changeDue = 1 % 100 = 1
+190 fifty = 1 / 50 = 0
+200 changeDue = 1 % 50 = 1
+210 twenty = 1 / 20 = 0
+220 changeDue = 1 % 20 = 1
+230 ten = 1 / 10 = 0
+240 changeDue = 1 % 10 = 1
+250 five = 1 / 5 = 0
+260 changeDue = 1 % 5 = 1
+270 two = 1 / 2 = 0
+280 changeDue = 1 % 2 = 1
+290 one = changeDue
+300/301 Output "Change due: 5001"
+305 Output "Change paid out in: "
+310 Output "This many $100,000 bills: "
+315 Output 0
+320 Output "This many $10,000 bills: "
+325 Output 0
+330 Output "This many $5,000 bills: "
+335 Output 1
+340 Output "This many $1,000 bills: "
+345 Output 0
+350 Output "This many $500 bills: "
+355 Output 0
+360 Output "This many $100 bills: "
+365 Output 0
+370 Output "This many $50 bills: "
+375 Output 0
+380 Output "This many $20 bills: "
+385 Output 0
+390 Output "This many $10 bills: "
+395 Output 0
+400 Output "This many $5 bills: "
+405 Output 0
+410 Output "This many $2 bills: "
+415 Output 0
+420 Output "This many $1 bills: "
+425 Output 1
+430 DONE
+
+-----
+
+Test Case #2: 
+
+What is being tested: A cash payment of $45,000 is made by “tendering” a $100,000 bill.
+Input values if any: 45000, 100000
+Expected results: The change due is $55,000. It’s paid out in five $10,000 bills, and one $5,000 bill.
+
+What would happen:
+10 amount owed = 45000
+15 cash paid = 100000
+20 Output introduction
+30/35 Output "Amount owed: 45000"
+40/45 Output "Cash paid: 100000"
+50 totalChangeDue = 100000 - 45000 = 55000
+60 changeDue = totalChangeDue = 55000
+70 thousand100 = 55000 / 100000 = 0
+80 changeDue = 55000 % 100000 = 55000
+90 thousand10 = 55000 / 10000 = 5
+100 changeDue = 55000 % 10000 = 5000
+110 thousand5 = 5000 / 5000 = 1
+120 changeDue = 5000 % 5000 = 0
+130 thousand = 0 / 1000 = 0
+140 changeDue = 0 % 1000 = 0
+150 hundred5 = 0 / 500 = 0
+160 changeDue = 0 % 500 = 0
+170 hundred = 0 / 100 = 0
+180 changeDue = 0 % 100 = 0
+190 fifty = 0 / 50 = 0
+200 changeDue = 0 % 50 = 0
+210 twenty = 0 / 20 = 0
+220 changeDue = 0 % 20 = 0
+230 ten = 0 / 10 = 0
+240 changeDue = 0 % 10 = 0
+250 five = 0 / 5 = 0
+260 changeDue = 0 % 5 = 0
+270 two = 0 / 2 = 0
+280 changeDue = 0 % 2 = 0
+290 one = changeDue
+300/301 Output "Change due: 55000"
+305 Output "Change paid out in: "
+310 Output "This many $100,000 bills: "
+315 Output 0
+320 Output "This many $10,000 bills: "
+325 Output 5
+330 Output "This many $5,000 bills: "
+335 Output 1
+340 Output "This many $1,000 bills: "
+345 Output 0
+350 Output "This many $500 bills: "
+355 Output 0
+360 Output "This many $100 bills: "
+365 Output 0
+370 Output "This many $50 bills: "
+375 Output 0
+380 Output "This many $20 bills: "
+385 Output 0
+390 Output "This many $10 bills: "
+395 Output 0
+400 Output "This many $5 bills: "
+405 Output 0
+410 Output "This many $2 bills: "
+415 Output 0
+420 Output "This many $1 bills: "
+425 Output 0
+430 DONE
+
+Test case #3:
+
+User inputs the wrong things in the filename
+change.txt:
+amount owed: $10,000
+change due: $5,000
+the problem here is that $ and , are not possible for the program so the input validation should ask them to try again
+"Please enter correct integer values in the text file"

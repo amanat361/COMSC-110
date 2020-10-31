@@ -1,0 +1,57 @@
+Exercise 9
+Due Tuesday by 12:30pm  Points 40  Submitting a file upload  File Types cpp and txt Available Jul 3 at 10:30am - Jul 3 at 12:30pm about 2 hours
+1. create threeQuestions-algorithm.txt to use a subprogram that asks the questions returns a boolean (true = user answered question correctly or false = user answered question incorrectly) value and the score is incremented by 1 if the user answered a question correctly.
+
+2. write threeQuestions.cpp from threeQuestions-algorithm.txt.
+For example your code will look something like this, but your questions are relative to computer science:
+int correct = 0;
+if (askQuestion("1st US president", "Washington")) correct++;
+if (askQuestion("2nd US president", "Adams")) correct++;
+...
+cout
+
+For example your program execution will look something like:
+1. How many bits in a byte? 8
+Correct!
+
+2. What is machine language: a) binary b) decimal c) hexidecimal? b
+Incorrect, but a better answer would be binary.
+
+3. What was the original name of the Internet? Arpanet
+Correct!
+
+That's 2 correct out of 3 questions asked.
+
+4. What if you start saving a nickel per week? Then each week, simply double the amount saved in the previous week.
+So at the end of 1 week, you collect 5 cents, and put it into your piggy bank. (Here's the URL for this
+link: http://en.wikipedia.org/wiki/Piggy_Bank.) At 2 weeks, you collect 10 cents allowance, for a total
+of 15 cents in the piggy bank. At 3 weeks, you collect 20 cents allowance, for a total of 35 cents in the
+piggy bank. And so on.
+
+Create myBillions-algorithm.txt to calculate and output the
+number of weeks that it will take to reach a total of one billion dollars or greater. For example, if the
+question was how many weeks it would take to total 35 cents or more in the piggy bank, the answer
+would be "3 weeks". Output the answer in a full sentence, something like this:
+In ?? weeks, I will be a billionaire!
+...where ?? is replaced by the integer number of weeks.
+Your algorithm must involve calculation, so that you do not simply work out the solution by hand and
+put just a output statement in the program.
+Also compute how long it would take to become a thousandaire and a millionaire. To do so, you may
+want to copy/paste/markup the lines of code that you used for the billionaire calculation, putting the thousandaire version at the top and the billionaire version at the bottom.
+
+5. Write myBillions.cpp from myBillions-algorithm.txt
+For example, your program execution will look like:
+In {your answer here} weeks, I will be a thousandaire!
+In {your answer here} weeks, I will be a millionaire!
+In {your answer here} weeks, I will be a billionaire!
+thousandaire version at the top and the billionaire version at the bottom.
+
+6. Please submit the following files:
+
+threeQuestions-algorithm.txt
+
+threeQuestions2cpp
+
+myBillions-algorithm.txt
+
+myBillions.cpp

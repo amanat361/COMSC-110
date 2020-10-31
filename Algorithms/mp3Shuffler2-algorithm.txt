@@ -1,0 +1,296 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Play a random song in a list of songs excluding the last 5 played songs
+
+2. Requirements
+INPUT:
+file name that has the list of songs in it
+y or n to continue generating a random song from the list
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+user introduction
+prompt for filename
+open file for input
+read through lines in the file
+add value of song to list of songs if input is valid
+play a random song in the array if the user wants to that hasn't been recently played
+
+OUTPUT:
+user introduction
+prompt for filename: "What is the name of the file with the list of songs: "
+prompt to continue: "Play a song? [Y/N]: "
+song name
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+
+[text] objective = "Play a random song in a list of songs excluding the last 5 played songs." (Program objective)
+[text] fileName (the name of the input file)
+[text] temp (temporary value that holds the song name)
+[text] outputSong = "" (what to output as the song)
+[integer] number (randomly generated number between 1-200)
+[integer] c (loop index)
+[true / false] inputValid = true (input validation parameter)
+[true / false] recent = false (was the song recently played)
+[true / false] continuePlaying = true (continue playing the songs)
+[character] playSong (y/n if the user wants to play the next song)
+[file input] fin (input file variable)
+[constant integer] MAX_SONGS = 200 (maximum amount of songs that the list can have)
+[integer] nSongs = 0 (the number of songs in the list)
+[text][array][capacity of MAX_SONGS] listOfSongs (array of songs)
+
+aRecentFive = a queue of the 5 recently played songs
+aSong = a song to be added to the recent song queue
+
+3. Instructions
+10 Output user introduction and instructions
+20 Prompt user for filename
+30 Input filename
+40 Open input file if file is good, if not good (doesn't exist) throw I/O error
+50 if no text in file skip to instruction 130
+60 inputValid = true
+70 get line in the file and set it to temp
+80 if temp has more than 0 characters (line is not blank) input is valid
+90 if not(input is valid and nSongs < MAX_SONGS) then skip to instruction 50
+100 add temp to listOfSongs with index of nSongs
+110 nSongs = nSongs + 1
+120 go back to instruction 50
+130 output prompt if user wants to play a song
+140 input y/n
+150 set input to lowercase
+160 if user does not say y or Y skip to instruction 270
+170 set continuePlaying to true
+170 generate random number between 1 and number of songs (nSongs)
+180 set outputSong to the song in listOfSongs at index of random number
+190 set recent to false
+200 for every song in aRecentFive, if equals outputSong, recent = true
+210 if recent = true skip to instruction 170
+220 Output to console the outputSong
+230 queue outputSong to the recent 5 songs
+240 move 4 recent songs backward in the recent songs list (one will leave the list)
+250 take the new song and add it to the front of the list
+260 skip to instruction 130
+270 Done
+
+4. Test Cases
+
+Test Case #1: simplest? test case
+
+What is being tested: a list of 6 songs with a blank line and various forms of input
+-----
+this test case simultaniously covers 5 different test cases
+-----
+
+Input values if any:
+file called songs.txt
+songs listed as:
+song1
+song2
+---blank line---
+song3
+song4
+song5
+song6
+Expected results:
+
+user intro and instruction
+Please create a text file with 200 songs listed on separate lines.
+What is the name of the file with the list of songs: songs.txt
+Play a song? [Y/N]: Y
+song2
+Play a song? [Y/N]: Y
+song3
+Play a song? [Y/N]: Y
+song1
+Play a song? [Y/N]: Y
+song4
+Play a song? [Y/N]: Y
+song5
+Play a song? [Y/N]: Y
+song6
+Play a song? [Y/N]: Y
+song2
+Play a song? [Y/N]: y (notice this one is lowercase)
+song3
+Play a song? [Y/N]: n
+
+What is happening:
+
+10 Output user introduction and instructions
+"Please create a text file with 200 songs listed on separate lines."
+20 Prompt user for filename
+"What is the name of the file with the list of songs: songs.txt"
+30 Input filename
+user types "songs.txt" and pushes enter
+40 Open input file if file is good, if not good (doesn't exist) throw I/O error
+songs.txt exists
+50 if no text in file skip to instruction 130
+there is text in file
+60 inputValid = true
+inputValid is now true
+70 get line in the file and set it to temp
+temp = first line in file = song1
+80 if temp has more than 0 characters (line is not blank) input is valid
+song1 > 0 characters so input is valid
+90 if not(input is valid and nSongs < MAX_SONGS) then skip to instruction 130
+input is valid
+100 add temp to listOfSongs with index of nSongs
+nSongs = 0 so listOfSongs @ index 0 is now song1
+110 nSongs = nSongs + 1
+nSongs = 0 + 1 = 1
+120 go back to insruction 50
+-----
+50 if no text in file skip to instruction 130
+there is text in file
+60 inputValid = true
+inputValid is now true
+70 get line in the file and set it to temp
+temp = next line in file = song2
+80 if temp has more than 0 characters (line is not blank) input is valid
+song2 > 0 characters so input is valid
+90 if not(input is valid and nSongs < MAX_SONGS) then skip to instruction 50
+input is valid
+100 add temp to listOfSongs with index of nSongs
+nSongs = 1 so listOfSongs @ index 1 is now song2
+110 nSongs = nSongs + 1
+nSongs = 1 + 1 = 2
+120 go back to insruction 50
+-----
+50 if no text in file skip to instruction 130
+there is text in file
+60 inputValid = true
+inputValid is now true
+70 get line in the file and set it to temp
+temp = next line in file = ""
+80 if temp has more than 0 characters (line is not blank) input is valid
+line is blank, input is not valid
+90 if not(input is valid and nSongs < MAX_SONGS) then skip to instruction 50
+input is not valid skip to 50
+-----
+50 if no text in file skip to instruction 130
+there is text in file
+60 inputValid = true
+inputValid is now true
+70 get line in the file and set it to temp
+temp = next line in file = song3
+80 if temp has more than 0 characters (line is not blank) input is valid
+song3 > 0 characters so input is valid
+90 if not(input is valid and nSongs < MAX_SONGS) then skip to instruction 50
+input is valid
+100 add temp to listOfSongs with index of nSongs
+nSongs = 2 so listOfSongs @ index 2 is now song3
+110 nSongs = nSongs + 1
+nSongs = 2 + 1 = 3
+120 go back to insruction 50
+-----
+50 if no text in file skip to instruction 130
+there is text in file
+60 inputValid = true
+inputValid is now true
+70 get line in the file and set it to temp
+temp = next line in file = song4
+80 if temp has more than 0 characters (line is not blank) input is valid
+song4 > 0 characters so input is valid
+90 if not(input is valid and nSongs < MAX_SONGS) then skip to instruction 50
+input is valid
+100 add temp to listOfSongs with index of nSongs
+nSongs = 3 so listOfSongs @ index 3 is now song4
+110 nSongs = nSongs + 1
+nSongs = 3 + 1 = 4
+120 go back to insruction 50
+-----
+--- DO THIS UNTIL EOF ---
+array of songs in text file has now been added to the array
+-----
+50 if no text in file skip to instruction 130
+skip to instruction 130
+130 output prompt if user wants to play a song
+"Play a song? [Y/N]:"
+140 input y/n
+user types Y and pushes enter
+150 set input to lowercase
+Y is set to y
+160 if user does not say y or Y skip to instruction 270
+user said Y
+170 set continuePlaying to true
+continuePlayins is now set to true
+170 generate random number between 1 and number of songs (nSongs)
+random number is 1
+180 set outputSong to the song in listOfSongs at index of random number
+outputSong = song2 because index 1 of listOfSongs is song2
+190 set recent to false
+recent is now set to false
+200 for every song in aRecentFive, if equals outputSong, recent = true
+song2 is not in the recent songs
+210 if recent = true skip to instruction 170
+recent = false, continue onto 220
+220 Output to console the outputSong
+"song2"
+230 queue outputSong to the recent 5 songs
+song2 added to list of 5 recent songs
+240 move 4 recent songs backward in the recent songs list (one will leave the list)
+there are not 5 songs in the list so this doesn't happen
+250 take the new song and add it to the front of the list
+there are not 5 songs in the list so this doesn't happen
+260 skip to instruction 130
+-----
+130 output prompt if user wants to play a song
+"Play a song? [Y/N]:"
+140 input y/n
+user types Y and pushes enter
+150 set input to lowercase
+Y is set to y
+160 if user does not say y or Y skip to instruction 270
+user said Y
+170 set continuePlaying to true
+continuePlayins is now set to true
+170 generate random number between 1 and number of songs (nSongs)
+random number is 2
+180 set outputSong to the song in listOfSongs at index of random number
+outputSong = song3 because index 2 of listOfSongs is song3
+190 set recent to false
+recent is now set to false
+200 for every song in aRecentFive, if equals outputSong, recent = true
+song3 is not in the recent songs
+210 if recent = true skip to instruction 170
+recent = false, continue onto 220
+220 Output to console the outputSong
+"song3"
+230 queue outputSong to the recent 5 songs
+song3 added to list of 5 recent songs
+240 move 4 recent songs backward in the recent songs list (one will leave the list)
+there are not 5 songs in the list so this doesn't happen
+250 take the new song and add it to the front of the list
+there are not 5 songs in the list so this doesn't happen
+260 skip to instruction 130
+-----
+this continues for all the following songs in the list as they are outputted
+as seen in the test case
+--- this goes on until the first 5 songs have been outputted then added to the queue
+after this, the only song that can be outputted is the 6th song
+this is because all 5 have already been entered into the queue
+with an array of six songs, what will end up happening is:
+the only song outputted will be the 6th song, meaning the songs will repeat in the same order over and over
+this is because the order can't change as the same song can't be outputted twice (in the recent 5)
+this will look something like this:
+song2
+song3
+song1
+song4
+song5
+- 5 songs have been entered, song6 is the only choice
+song6
+- song 2 has left the recent 5 queue and is the only choice to be outputted
+song2
+- same for song 4
+song3
+- this pattern continues, the only time you can have a randomized pattern is 7 or more songs
+- the reason I specifically used 6 in the test case is to monitor the outputted song for testing
+song1
+song4
+song5
+song6
+-----
+-----
+270 Done

@@ -1,0 +1,39 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+To determine how far away a boat can see a lighthouse at sea.
+
+2. Requirements
+INPUT:
+height of the lighthouse, in feet, wth any number of decimal digits (for example, 100 or 55.5)
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+
+Prompt the user to enter the height of the lighthouse, in feet, with any number of decimal digits (for example, 100 or 55.5)
+Calculate the distance in miles.
+Output the answer with a label and with both the input and output values.
+
+OUTPUT:
+Prompt = "Please enter the height of the lighthouse, in feet, with any number of decimal digits (for example, 100 or 55.5): "
+The answer with a label including input and output values
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[double] height = height of the lighthouse, in feet, with any number of decimal digits
+[double] miles = the distance in miles
+
+3. Instructions
+10 Output user introduction with instructions
+20 Output Prompt
+25 Input height
+30 miles = square-root(0.8 * height)
+40 Output the answer with a label including input and output values with formatting
+50 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: A 100 foot tall lighthouse
+	Input values if any: 100.001
+	Expected results: "A 100.001 foot tall lighthouse can be seen from 9 miles away"

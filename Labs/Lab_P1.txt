@@ -1,0 +1,63 @@
+Lab P1
+Due Sunday by 11:59pm  Points 50  Submitting a file upload  File Types cpp and txt Available Jun 28 at 12pm - Jul 1 at 11:59pm 3 days
+1. Write rps1-algorithm.txt to play rock, paper, scissors game. For reference see: www.worldrps.com
+The 2-player game will be interactive: human vs. computer!
+The game will replay until the human player decides to quit. Human input will be through the
+keyboard, entering R or r for rock, P or p for paper, S or s for scissors, or Q or q to quit. Computer
+input will be randomly generated (0-rock, 1-paper, 2-scissors).
+Add score keeping to the game to track the numbers of computer wins and human wins -- do not
+count ties. Output the numbers of computer wins and human wins after all play ends.
+play game:
+-->>generate a random number between 0 to 2 for computer's choice of rock, paper, or scissors
+prompt for userPlay
+input userPlay
+randomly generate computerPlay
+determine winner
+output computerPlay and userPlay and who won
+if user won, add 1 to userScore, else if computer won, add 1 to computerScore
+output computerScore and userScore with appropriate labels
+prompt for userPlay
+if human wants to quit, then END
+-->>repeat
+
+Make sure you have ALL the possible test cases!
+
+2. Write rps1.cpp from rps1-algorithm.txt
+In the coding for this game you will use code blocks, loops, and if and/or switch structures. Organizing
+code into "code blocks" will prepare you for moving code blocks into functions in future studies.
+Functions for:
+--introduction (void function)
+--computerPlay (value returning function)
+--userPlay (value returning function)
+--determine winner and keep score (value returning function)
+
+
+For example:
+Welcome to the game of Rock, Paper, Scissors. You will be asked to choose either R=rock or P=paper or S=scissors, and the computer will do the same. The winner is determined by Rock wins against Scissors, or Scissors wins against Paper, or Paper wins against Rock. The game winner is the player with the most scores. The best player is the player with the highest overall score.
+
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: p
+Computer: S, Human: P, Computer wins
+
+Choose: [Rock,Paper,Scissors,Quit]: p
+Computer:P, Human:P, tie
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: r
+Computer: S, Human: R, you win!
+Computer wins: 1 Human wins: 1
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: p
+Computer: R, Human: P, you win!
+Computer wins: 1 Human wins: 2
+
+Choose: [R=rock, P=paper, S=scissors, or Q=quit]: s
+Computer: P, Human: S, you win!
+Computer wins: 1 Human wins: 3
+
+Choose: [Rock,Paper,Scissors,Quit]: q
+
+Thanks for playing!
+
+3. Please submit the following files:
+rps1-algorithm.txt
+rps1.cpp

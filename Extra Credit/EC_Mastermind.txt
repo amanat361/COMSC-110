@@ -1,0 +1,15 @@
+EC: Mastermind
+Due Sunday by 11:59pm  Points 15  Submitting a file upload  File Types cpp and txt Available Jul 2 at 12:30pm - Jul 8 at 11:59pm 6 days
+0. Watch the video on the www.rdb3.com (Links to an external site.)Links to an external site. chapter 7 on developing the Mastermind game.  Take notes on the algorithm using the algorithm template and take notes on the program using the program template.
+
+1. Write mastermind-algorithm.txt using the algorithm template.
+
+2. Write mastermind.cpp from mastermind-algorithm.  Must have input validation, 10 guesses to guess the code and offer the player a chance to play again.  DIFFERENT FROM video, USE PROGRAMMER DEFINED FUNCTIONS APPROPRIATELY.
+
+How to get a zero score for this lab: if you do the algorithm and/or the program the way the video did it and not make use of everything we learned up to and including chapter 8 and do not use our algorithm and program templates appropriately.
+
+3. Please submit the following files: 
+
+mastermind-algorithm.txt
+
+mastermind.cpp

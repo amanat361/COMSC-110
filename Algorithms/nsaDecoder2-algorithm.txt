@@ -1,0 +1,114 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Enter a line of text then decode the text to based on the decoding array.
+
+2. Requirements
+INPUT:
+Input file to encode with text in the file
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+Get file name from user
+Open input file (secret.txt)
+For each character in the file, bump it down one in the ASCII code (b = a, 2 = 1, @ = ?, etc.)
+Output encoded text to the console
+Close secret.txt
+
+OUTPUT:
+Output user introduction
+Output decoded text to the console
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[string] objective - "Enter a line of text then encode the text to the next character in the ASCII code."
+[string] text - text inputted by the user in their text file
+[string] input file - the name of the file that is inputted by the user
+[integer] loop index - a letter like 'c' to be used in a for loop
+[ifstream] fin - a variable to hold the value of an inputted file (reading from a file)
+[integer] counter - how far in the text the loop has gone through, starts at 0
+[integer] offsetIndex - the location in the offset array
+[constant integer] SIZE - size of the array - initializes at 5
+[integer array] offset - an array with the size of SIZE that holds the values of -5, 8, 12, 6, and 1
+
+3. Instructions
+10 Output user introduction
+20 Open "secret.txt" as the input file
+25 Check if file is good
+30 If there is no text in the input file, skip to instruction 100
+40 Get a line of text from input file
+60 offsetIndex = remainder of counter / SIZE
+70 c = 0
+80 as long as c < length of text do the following, if c >= length of text then skip to instruction 140
+90 For each character in the line of text, move that character ASCII code - offset index of c
+100 counter = counter + 1
+110 offsetIndex = remainder of counter / SIZE
+120 c = c + 1
+130 go back to instrcution 80
+140 For each character in the line of text, move that character ASCII code + offset index of c
+150 Output decoded text to the console
+160 If EOF skip to instruction 40 else skip to instruction 170
+170 Close files
+200 END
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: Decoding Cmxrp from secret.txt
+Input values if any: secret.txt with Cmxrp written on its first line
+Expected results: Hello
+
+Output user introduction
+Output: Hello
+
+What should happen:
+Open secret.txt as input file that has "Cmxrp" written on the first line
+offsetIndex = counter % SIZE = 0 / 5 = 0
+c = 0
+text[c] = text[c] - offset[offsetIndex]
+text[0] = text[0] - offset[0]
+C = C + 5
+text[c] = H
+text[0] = H
+total output = H
+counter = counter + 1 = 0 + 1 = 1
+offsetIndex = counter % SIZE = 1 / 5 = 1
+c = 1
+text[c] = text[c] - offset[offsetIndex]
+text[1] = text[1] - offset[1]
+m = m - 8
+text[c] = e
+text[1] = e
+total output = He
+counter = counter + 1 = 1 + 1 = 2
+offsetIndex = counter % SIZE = 2 / 5 = 2
+c = 2
+text[c] = text[c] - offset[offsetIndex]
+text[2] = text[2] - offset[2]
+x = x - 12
+text[c] = l
+text[2] = l
+total output = Hel
+counter = counter + 1 = 2 + 1 = 3
+offsetIndex = counter % SIZE = 3 / 5 = 3
+c = 3
+text[c] = text[c] - offset[offsetIndex]
+text[3] = text[3] - offset[3]
+r = r - 6
+text[c] = l
+text[3] = l
+total output = Hell
+counter = counter + 1 = 3 + 1 = 4
+offsetIndex = counter % SIZE = 4 / 5 = 4
+c = 4
+text[c] = text[c] - offset[offsetIndex]
+text[4] = text[4] - offset[4]
+p = p - 1
+text[c] = o
+text[4] = o
+total output = Hello
+no more characters in line of text, go to next line
+no more lines in file, end loop
+Output "Hello" to console
+Close input file
+Done

@@ -1,0 +1,92 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+4 function calculator that takes two numbers and an operator as input and gives the result
+
+2. Requirements
+INPUT:
+first number - the user's first number in the calculation
+second number - the user's second number in the calculation
+operator - the operator to be used in the calculation
+
+PROCESSING:
+Get 2 numbers and operator from user
+Calculate the equation
+Output the result and ask if they would like to do it again
+If yes, loop the program - If no, stop the program
+
+OUTPUT:
+Introduction and Instructions - "Please follow the prompts."
+Prompt1 - "Please enter first number: "
+Prompt2 - "Please enter second number: "
+Prompt3 - "Please enter operator [1= addition  2= subtraction  3= multiplcation  4= division]: "
+Result - "(first number) (operator) (second number) = (answer)"
+Prompt4 - "Another calculation [Y=yes or N=no]: "
+
+DATA:
+[double] firstNumber - does not initialize, can be a decimal
+[double] secondNumber - does not initialize, can be a decimal
+[int] operator - a number that represents the operator, between 1 and 4, whole number, does not initialize
+[double] answer - the result of the equation, can be a decimal, does not initialize
+[char] continue - either Y or N, and the user inputs this to see if the loop should continue or not
+
+3. Instructions
+10 Output user introduction and instructions
+20 Output Prompt1
+25 Input firstNumber
+30 Output Prompt2
+35 Input secondNumber
+40 Output Prompt3
+45 Input operator
+46 Check if operator is between 1-4
+50 If operator = 1 then go to instruction 50a, 2 = 50b, 3 = 50c, and 4 = 50d
+50a answer = firstNumber + secondNumber
+50b answer = firstNumber - secondNumber
+50c answer = firstNumber * secondNumber
+50d answer = firstNumber / secondNumber
+60 Output Result
+70 Output Prompt4
+80 Input continue
+90 If continue = "Y" go to instruction 20
+100 DONE
+
+4. Test Cases
+Test Case#1: the simplest test case
+
+	What is being tested: simple addition
+	Input values if any: 2, 3, 1
+	What is expected: 5
+
+What would happen:
+
+"Please follow the prompts."
+"Please enter first number: 2"
+"Please enter second number: 3"
+"Please enter operator [1= addition  2= subtraction  3= multiplcation  4= division]: 1"
+answer = 2 + 3 = 5
+"2 + 3 = 5"
+"Another calculation [Y=yes or N=no]: N"
+*end*
+
+Test Case#1: more complex
+
+	What is being tested: simple division
+	Input values if any: 100, 20, 4
+	What is expected: 4
+
+What would happen:
+
+"Please follow the prompts."
+"Please enter first number: 100"
+"Please enter second number: 20"
+"Please enter operator [1= addition  2= subtraction  3= multiplcation  4= division]: 4"
+answer = 100 / 20 = 4
+"100 / 20 = 4"
+"Another calculation [Y=yes or N=no]: Y"
+"Please enter first number: 100"
+"Please enter second number: 12.5"
+"Please enter operator [1= addition  2= subtraction  3= multiplcation  4= division]: 4"
+answer = 100 / 12.5 = 8
+"100 / 12.5 = 8"
+*end*

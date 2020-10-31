@@ -1,0 +1,59 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Prompt the user to console-input data and have the program output the data
+
+2. Requirements
+INPUT:
+user's lucky number (integer)
+user's favorite movie (string)
+user's age (double)
+user's first initial (char)
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+1a. prompt the user for their lucky number (integer).
+
+1b. prompt the user for their favorite movie (text)
+
+1c. prompt the user for their age (decimal)
+
+1d. prompt the user for their first letter in their name (single character)
+
+1e. output these data values in a sentence with appropriate lablels.
+
+OUTPUT:
+Prompt1 = "What is your lucky number [whole number that can be either positive or negative]: "
+Prompt2 = "What is your favorite movie: "
+Prompt3 = "What is your age [decimal value, can't be negative]: "
+Prompt4 = "What is your first initial [one character]: "
+Data values in a sentence: luckyNumber, favoriteMovie, age, and firstInitial
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[integer] luckyNumber - the user's lucky number
+[string] favorite movie - the user's favorite movie in text
+[double] age - the user's age as a decimal
+[char] firstInitial - the user's first letter in their first name as a single character
+
+3. Instructions
+10 Output introduction with user instructions
+20 Output Prompt1
+25 Input luckyNumber
+30 Output Prompt2
+35 Input favoriteMovie
+40 Output Prompt4
+45 Input age
+50 Output Prompt5
+55 Input firstInitial
+60 Output these data values in a sentence with appropriate labels
+70 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: A regular user inputing regular values
+	Input values if any: 66, The Imitation Game, 16, S
+	Expected results:
+
+	"Hi, your lucky number is 66, your favorite movie is "The Imitation Game", you are 16 years old, and your first initial is S."

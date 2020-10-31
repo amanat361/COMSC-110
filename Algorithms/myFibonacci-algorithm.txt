@@ -1,0 +1,146 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Calculate a value in the "Fibonacci number" series
+
+2. Requirements
+INPUT:
+the user inputs the index of the fibonacci sequence
+(i.e. if the user inputs 6 the output would be the 6th sequence - 0, 1, 1, 2, 3, 5, 8)
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+-----
+MAIN
+-----
+user introduction
+prompt user for index
+run fibonacci sequence and output each number
+output the last number in the sequence
+-----
+FIBONACCI
+-----
+If the number is 1 or 0, just output the number
+Take the number and sum the values of the two numbers that precede it
+Return value to main
+
+OUTPUT:
+User introduction
+Prompt for fibonacci sequence index - "What is the fibonacci index [0 or greater]: "
+The sequence of numbers
+The final number at that index with the label (for example - "The Fibonacci number at index 6 is 8"
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[text] objective = "Calculate a value in the "Fibonacci number" series" (program objective)
+[integer] number (the index that the user is inputting)
+[integer] i (loop index) Note: this program uses recursion, not iteration for the fibonacci sequence.
+^^^ This loop index is ONLY for going through the index to 0, NOT the fibonacci sequence
+
+3. Instructions
+-----
+MAIN
+-----
+10 Output user introduction and instructions
+20 Output "What is the fibonacci index [0 or greater]: "
+30 Input number
+40 i = 0
+50 if number < i skip to instruction 90
+60 Output fibonacci value with value of i passed through
+70 i = i + 1
+80 go back to instruction 50
+90 Output "The fibonacci number at index " number " is " fibonacci value with number passed through
+-----
+FIBONACCI (an integer function that takes in an integer n as its parameter)
+-----
+10 if n is 1 or 0, return n
+20 else:
+30 return (fibonacci(n-1)+fibonacci(n-2)) --- this runs the fibonacci function again with these values
+
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: the fibonacci sequence of index 4
+Input values if any: 4
+Expected results: 0 1 1 2 3
+What should happen:
+-----
+MAIN
+-----
+10 Output user introduction and instructions
+20 Output "What is the fibonacci index [0 or greater]: "
+30 Input number
+user inputs 4 and presses enter
+40 i = 0
+50 if number < i skip to instruction 90
+4 is not < 0
+60 Output fibonacci value with value of i passed through
+run the fibonacci function with n = 0 as the value of 0 is passed through
+-----
+FIBONACCI
+-----
+n is passed through from main with a value of 0
+10 if n is 1 or 0, return n
+n (which is 0) is either one or zero
+value of 0 is returned so function does not continue
+-----
+MAIN
+-----
+60 Output fibonacci value with value of i passed through
+as we got from the function, 0 is the value outputted
+(sofar what is outputted is "0")
+70 i = i + 1
+i = 0 + 1
+i = 1
+80 go back to instruction 50
+50 if number < i skip to instruction 90
+4 is not < 1
+60 Output fibonacci value with value of i passed through
+-----
+FIBONACCI
+-----
+n is passed through from main with a value of 1
+10 if n is 1 or 0, return n
+n (which is 1) is either one or zero
+value of 1 is returned so function does not continue
+-----
+MAIN
+-----
+60 Output fibonacci value with value of i passed through
+as we got from the function, 1 is the value outputted
+(sofar what is outputted is "0 1")
+70 i = i + 1
+i = 1 + 1
+i = 2
+50 if number < i skip to instruction 90
+4 is not < 2
+60 Output fibonacci value with value of i passed through
+-----
+FIBONACCI
+-----
+n is passed through from main with a value of 2
+10 if n is 1 or 0, return n
+n (which is 2) it not one or zero
+20 else:
+30 return (fibonacci(n-1)+fibonacci(n-2))
+this causes recursion to keep on running the fibonacci summing the next two values together and using that as the next value
+-----
+-----
+Main and Fibonacci keep doing this process back and forth until number (4) is not greater than i
+This also means the program has run 4 times, i.e. gone through 4 sequences
+The console output at this point it "0 1 1 2 3"
+Assuming this has gone through all values, instruction 50 says:
+50 if number < i skip to instruction 90
+now the program can finish with instruction 90
+-----
+-----
+MAIN
+-----
+90 Output "The fibonacci number at index " number " is " fibonacci value with number passed through
+This does the fibonacci functions like above, but instead of passing through i, it passes through number
+number is 4, meaning it just calculates the value for the last number in the sequence
+"The fibonacci number at index 4 is 3"
+-----
+DONE
+-----

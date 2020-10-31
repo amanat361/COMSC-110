@@ -1,0 +1,86 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+A 30 year fixed loan mortgage calculator
+
+2. Requirements
+INPUT:
+the amount of money borrowed
+the annual interest rate
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+make a struct called mortgage that has the values of borrowed, interest rate, amount of monthly payments, the final payment
+ask the user to input their password to continue
+get data from user to fill in mortgage table
+calculate payment
+output the mortgage payment to console and file
+
+OUTPUT:
+the mortgage payment with a precision of 2 decimal places and the appropriate label
+example: "The mortgage payment is $19.76"
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+text - objective - "A 30 year fixed loan mortgage calculator."
+whole number - password - a student id to be used as the program's password
+whole number - passwordGuess - what the user enters for password
+output file - fout - to echo the output to a file called mortgage.txt
+mortgage values - a - makes a mortgage table for the user called a
+
+3. Instructions
+*10 Output user introduction and instructions
+*20 Get password to run
+30 Output "What is the correct student ID: "
+40 Input passwordGuess
+50 if passwordGuess equals password, skip to instruction 70
+60 go back to instruction 30
+*70 get data from user
+80 monthly payments = 30 (30 * 12)
+90 Output "What is the ammount borrowed (whole number): "
+100 Input amount borrowed
+110 Output "What is the annual interest rate (as a percentage without the % sign): "
+120 Input interest rate
+*130 Calculate payment
+140 interest rate = interest rate / 100 (convert percentage to whole value)
+150 interest rate = interest rate / 12 (convert annual to monthly)
+160 m = (p*(1+r)^n * r)/((1+r)^n - 1)) ==> calculate this formula with m, p, r, and n, replaced with payment, borrowed, monthlyPayments, and interestRate
+*170 Output the mortgage payment to console
+180 Set precision to 2 decimal places
+190 Output payment
+*200 Output the mortgage payment to file
+210 Set precision to 2 decimal places
+220 Output payment
+230 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: A regular mortgage
+	Input values if any: 1234567, 270000, 5.125
+	Expected results: 1470.11
+
+What is expected:
+
+What is the correct studnet ID: 7654321
+What is the correct student ID: 1234567
+What is the ammount borrowed (whole number): 270000
+What is the annual interest rate (as a percentage without the % sign): 5.125
+The mortgage payment is $1470.11
+
+What is happening:
+
+What is the correct student ID
+User inputs ID
+ID is incorrect so the loop repeats
+What is the correct student ID
+User inputs ID
+ID is valid so the loop breaks
+What is the ammount borrowed (whole number):
+User inputs 270000
+What is the annual interest rate (as a percentage without the % sign): 5.125
+interest rate / 1200 = 4.20783
+payment = 1470.1192
+set precision to 2
+output to console and file:
+"The mortgage payment is $1470.11"

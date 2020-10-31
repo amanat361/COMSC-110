@@ -1,0 +1,105 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+A factorial program that uses iteration
+
+2. Requirements
+INPUT:
+a number inputted by the user [integer]
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+-----
+MAIN
+-----
+user introduction
+prompt for number until user inputs a valid number above or equal to zero
+output factorial answer from function with number passed through
+-----
+FACTORIAL
+-----
+loop through every number between 1 and number passed from main
+if number is not 0, set answer to answer * loop index
+return the answer back to main
+
+OUTPUT:
+"The factorial of " number " is " answer
+error message: ""Input a number to get a factorial for (must be > or = to 0): "
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+<----->
+MAIN
+<----->
+[integer] number (the number inputted by the user to get a factorial from)
+<----->
+FACTORIAL
+<----->
+[integer] c (loop index)
+[integer] answer = 1 (answer)
+
+3. Instructions
+-----
+MAIN
+-----
+10 Output user introduction
+20 Output nrompt for number
+30 Input number
+40 Check if number is greater than or equal to zero
+50 if number < 0, outout error message and go back to instruction 20
+60 Pass number to factorial function and get result
+70 Output "The factorial of !" number " is " answer
+-----
+FACTORIAL
+-----
+10 c = 1
+20 answer = 1
+30 n = number passed from main
+40 if n is 0, return n back to main as the answer
+50 answer = answer * c
+60 c = c + 1
+70 if c <= n, go back to instruction 50
+80 return answer to main
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: invalid value then correct value
+Input values if any: 5
+Expected results: "The factorial of !5 is 120"
+What would happen:
+Input a number to get a factorial for (must be > or = to 0): 5
+The factorial of !5 is 120
+
+What is happening:
+
+User introduction is outputted
+"Input a number to get a factorial for (must be > or = to 0): "
+User inputs -5 as their number
+number is < 0
+"Your number must be greater than or equal to zero."
+"Input a number to get a factorial for (must be > or = to 0): "
+User inputs 5 as their number
+5 is passed to factorial as n
+c = 1
+answer = 1
+c <= n ----- 1 <= 5
+5 != 0
+answer = answer * c = 1 * 1 = 1
+c = c + 1 = 1 + 1 = 2
+answer = 1
+answer = answer * c = 1 * 2 = 2
+c = c + 1 = 2 + 1 = 3
+answer = 2
+answer = answer * c = 2 * 3 = 6
+c = c + 1 = 3 + 1 = 4
+answer = 6
+answer = answer * c = 6 * 4 = 24
+c = c + 1 = 4 + 1 = 5
+answer = 24
+answer = answer * c = 24 * 5 = 120
+c = c + 1 = 5 + 1 = 6
+answer = 120
+c > n because 6 > 5, loop doesn't continue
+return 120 as answer back to main
+"The factorial of !5 is 120"

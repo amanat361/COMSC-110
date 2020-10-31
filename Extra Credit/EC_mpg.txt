@@ -1,0 +1,11 @@
+EC: mpg
+Due Monday by 11:59pm  Points 15  Submitting a file upload Available Jun 26 at 11am - Jul 2 at 11:59pm 7 days
+1.Write an algorithm, mpg-algorithm.txt, to get keyboard input from the user to calculate the miles/gallon and depending on the capacity in gallons of the fuel tank calculate the range possible with the remaining fuel. Assume the user filled the fuel tank before driving and user knows the number of gallons used on trip.
+
+2. Write the program mpg.cpp from the algorithm.
+
+3. Please submit the following files:
+
+mpg-algorithm.txt
+
+mpg.cpp

@@ -1,0 +1,54 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Depending on the capacity in gallons of the fuel tank calculate the range possible with the remaining fuel.
+
+2. Requirements
+INPUT:
+the fuel tank capacity in gallons
+the distance of their last trip
+how much fuel used on trip in gallons
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+
+Get keyboard input from the user
+Calculate the miles/gallon
+Multiply capacity by miles to see the range possible with remaining fuel
+
+OUTPUT:
+Prompt1 = "What is the fuel tank capacity [in gallons] of your vehicle: "
+Prompt2 = "How many miles was your last trip: "
+Prompt3 = "How many gallons did you use on that trip: "
+Data = "At (mpg) miles per gallon and (capacity) gallons left in your fuel tank, "
+Answer = "you can drive (totalDistance) miles on your next trip."
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[double] capacity = fuel tank capacity in gallons (can be a decimal)
+[double] miles = distance of their last trip (can be a decimal)
+[double] gallons = amount of fuel used on trip
+[double] mpg = miles / gallons (amount of miles that can be traveled per gallon)
+[double] totalDistance = mpg * capacity (range possible with the remaining fuel)
+
+3. Instructions
+10 Output user introduction with user instructions
+20 Output Prompt1
+25 Input capacity
+30 Output Prompt2
+35 Input miles
+40 Output Prompt3
+45 Input gallons
+50 mpg = miles / gallons
+55 capacity = capacity - gallons
+60 totalDistance = mpg * capacity
+70 Output Data
+75 Output Answer
+80 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: A basic scenario
+	Input values if any: 21, 200. 10
+	Expected results: "At 20 miles per gallon and 11 gallons left in your fuel tank, you can drive 210 miles on your next trip!"

@@ -1,0 +1,79 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective: Find the average age of everyone in the room.
+
+2. Requirements
+INPUT:
+- each person's age [age]
+
+PROCESSING:
+1. Tell the user what we are going to do (user introduction).
+2. Input each person's age and count each person.
+3. Calculate the average age and output it.
+
+OUTPUT:
+- User introduction
+- Label + averageAge
+
+DATA:
+age = each person's age [integer measured in years] valid values are 0 years to 122 years.
+count = number of people in the room [integer] valid values are >= 0.
+sum = sum of all ages [integer measured in years].
+averageAge = average age of all the people in the room [decimal].
+
+3. Instructions (recipie)
+
+10 Output user introduction
+15 Output prompt "What is an age in whole years [0-122]?"
+20 Input each person's age
+21 Input validation [see if age is between 0-122 and an integer]
+22 Add 1 to count
+23 Add age to sum
+24 More people? If yes - keep going. If no - skip to instruction 30
+25 Go back to instruction 15 [looping until no more people]
+30 Divide sum by count
+40 Output averageAge
+
+4. Test Cases
+Test Case #1:
+	What is being tested: 3 people in the room
+	Input values (if any): ages 21, 32, 43
+	Expected results: average age = 32
+
+What would happen:
+
+"User introduction"
+"What is an age in whole years [0-122]?"
+User: 21
+(Input is valid)
+(Count of people increases by one == 1)
+(Sum == 0 + 21 == 21)
+User: 32
+(Input is valid)
+(Count of people increases by one == 2)
+(Sum == 21 + 32 == 53)
+User: 43
+(Input is valid)
+(Count of people increases by one == 3)
+(Sum == 53 + 43 == 96)
+(No more people to count)
+(96 / 3 == 32)
+"The Average Age Is 32"
+
+Test Case #2:
+	What is being tested: 0 people in the room
+	Input values (if any): n/a
+	Expected results: error (can't do instruction 30 as 'count' would be zero and can't divide by zero)
+
+What would happen:
+
+"User introduction"
+"What is an age in whole years [0-122]?"
+User:
+(Input is invalid)
+
+Test Case #3:
+	What is being tested: 2 people in the room
+	Input values (if any): ages 2, 3
+	Expected results: average age = 2.5 OR 3 (curious if it would be a decimal or rounded as the inputed variables are integers)

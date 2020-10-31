@@ -1,0 +1,108 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+To use a subprogram that asks the questions returns a boolean value.
+
+2. Requirements
+INPUT:
+answer - the user's answer to a question
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+Prompt user for question
+See if answer is correct
+Output approprite response
+Output score of user
+
+OUTPUT:
+Question1 - "How many bits in a byte? "
+Question2 - "What is machine language: a) binary b) decimal c) hexidecimal? "
+Question3 - "What was the original name of the Internet? "
+correct message - "Correct!"
+incorrect message - "Incorrect, but a better answer would be (answer)"
+score - the score of the user (out of 3)
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+boolean correct = either true or fallse to see if their answer is correct or not
+string answer = the answer from the user
+integer score = keeps track of score for the user, can't be more than three and starts at 0
+
+3. Instructions
+10 Output user introduction
+20 Output user instructions
+30 Output Question1
+35 Input answer
+40 Send answer to subprogram Question1
+45 Return bool correct (true or false)
+46 Output correct / incorrect message
+47 If correct, add 1 to score
+50 Output Question 2
+55 Input answer
+60 Send answer to subprogram Question2
+65 Return bool correct (true or false)
+66 Output correct / incorrect message
+67 If correct, add 1 to score
+70 Output Question 2
+75 Input answer
+80 Send answer to subprogram Question2
+85 Return bool correct (true or false)
+86 Output correct / incorrect message
+87 If correct, add 1 to score
+90 Output score out of 3
+
+Subprogram Question 1, 2, and 3
+10 Check if answer passed from main = correct answer
+20 Return the true/false value
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+	What is being tested: getting a question wrong
+	Input values if any: 8, b, arpanet
+	Expected results:
+
+1. How many bits in a byte? 8
+Correct!
+
+2. What is machine language: a) binary b) decimal c) hexidecimal? b
+Incorrect, but a better answer would be binary.
+
+3. What was the original name of the Internet? Arpanet
+Correct!
+
+That's 2 correct out of 3 questions asked.
+
+Test Case #2: specific scenario
+
+	What is being tested: getting all the questions wright
+	Input values if any: 8, a, blah
+	Expected results:
+
+1. How many bits in a byte? 8
+Correct!
+
+2. What is machine language: a) binary b) decimal c) hexidecimal? a
+Correct!
+
+3. What was the original name of the Internet? Arpanet
+Correct!
+
+That's 3 correct out of 3 questions asked.
+
+Test Case #3: specific scenario
+
+	What is being tested: giving a capital letter for question 2
+	Input values if any: 8, A, arpanet
+	Expected results:
+
+1. How many bits in a byte? 8
+Correct!
+
+2. What is machine language: a) binary b) decimal c) hexidecimal? A
+Correct!
+
+3. What was the original name of the Internet? Arpanet
+Correct!
+
+That's 3 correct out of 3 questions asked.

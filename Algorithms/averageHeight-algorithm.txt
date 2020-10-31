@@ -1,0 +1,85 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective: Find the average height of everyone in the room.
+
+2. Requirements
+INPUT:
+- Each person's height [height]
+
+PROCESSING:
+1. Tell the user what we are going to do (user introduction).
+2. Input each person's height and count each person.
+3. Calculate the average height and output it.
+
+OUTPUT:
+- User introduction
+- Label + averageHeight
+
+DATA:
+height = each person's height [decimal measured in feet] valid values are 1.79 feet (world's shortest person) to 8.25 feet (world's tallest person).
+count = number of people in the room [integer] valid values are >= 0.
+sum = sum of all heights [decimal measured in feet].
+averageHeight = average height of all the people in the room [decimal].
+
+3. Instructions (recipie)
+
+10 Output user introduction
+15 Output prompt "What is a height in feet [1.79-8.25]?"
+20 Input each person's height
+21 Input validation [see if height is between 1.79 feet and 8.25 feet, can be either decimal or integer]
+22 Add 1 to count [which starts at zero]
+23 Add height to sum [which starts at zero]
+24 More people? If yes - keep going. If no - skip to instruction 30
+25 Go back to instruction 15 [looping until no more people]
+30 Divide sum by count
+40 Output averageHeight
+
+4. Test Cases
+
+Test Case #1:
+
+	What is being tested: 5 people in the room
+	Input values (if any): heights 6.5 feet, 5 feet, 6 feet
+	Expected results: average height = 5.83 feet
+
+	What would happen:
+
+	"User introduction"
+	"What is a height in feet [1.79-8.25]?"
+	User: 6.5
+	(Input is valid)
+	(Count == 0 + 1 == 1)
+	(Sum == 0 + 6.5 == 6.5)
+	"What is a height in feet [1.79-8.25]?"
+	User: 5
+	(Input is valid)
+	(Count == 1 + 1 == 2)
+	(Sum == 6.5 + 5 == 11.5)
+	"What is a height in feet [1.79-8.25]?"
+	User: 6
+	(Input is valid)
+	(Count == 2 + 1 == 3)
+	(Sum == 11.5 + 6 == 17.5)
+	(No more people to count)
+	(17.5 / 3 == 5.83)
+	"The Average Height is 5.83 Feet"
+
+Test Case #2:
+
+	What is being tested: 0 people in the room
+	Input values (if any): n/a
+	Expected results: error (can't do instruction 30 as 'count' would be zero and can't divide by zero)
+
+	What would happen:
+
+	"User introduction"
+	"What is a height in feet [1.79-8.25]?"
+	User: [pushes return as the field is left blank]
+	(Input is invalid)
+
+Test Case #3:
+
+	What is being tested: How precise a decimal can be?
+	Input values (if any): 5.123456789, 5.987654321
+	Expected results: 5.555555555 being the average height

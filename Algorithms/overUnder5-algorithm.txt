@@ -1,0 +1,201 @@
+Name: Samin Amanat
+Course: COMSC-110-1021
+
+1. Objective
+Guess a random number between 1-100
+
+2. Requirements
+1. guessing 1 and 100
+2. input validation
+3. check if the user guess has already been guessed and provide feeback "you alread guessed " guess
+4. did the user guess the random target number
+5. check if the user guess is too high and provide feedback "that's too high---guess again"
+6. check if the suer guess is too low and provide feedback "that's too low---guess again"
+
+INPUT:
+user's guess - the user must input an integer as their guess
+
+PROCESSING: the objective broken down into major parts, use it as checklist
+1. data items
+2. user introduction
+3. user guess input with input validation
+4. check if the user guess is correct, or too high or too low, or is a duplicate guess
+
+OUTPUT:
+user introduction
+prompt for user guess
+error message for input validation
+error message for repeats
+message if it is too high or too low
+message to guess again
+message if the user is correct
+
+DATA: data item name, type of data, units of measure, valid values, formatting
+[text] objective = "Guess a random number between 1-100" (Program objective)
+[integer] number = 1 + rand() % 100 (randomly generated number)
+[integer] temp (temporary variable to compare values)
+[integer] c (loop index for ammount of times user has guessed)
+[true / false] inputValid = true (input validation flag (true/false))
+[queue] listOfGuesses (the list of guesses the user gives to be remembered)
+[Guess] guess (guess given by the user)
+
+3. Instructions
+0 Random number is generated
+10 Output user introduction
+20 Output intro message (different from introduction) "I'm thinking of a number from 1 to 10."
+30 inputValid = true
+40 prompt for user guess
+50 input user's guess as temp
+60 c = 0
+70 for c < nGuesses, c = c + 1
+80 if temp = listOfGuesses at index of c
+80a "You've already guessed " temp and then set inputValid to false
+90 if temp is not between 1-100 then output "I really want a number between 1 and 100." and set inputValid to false
+100 if input is valid continue, if not skip to instruction 40
+110 if the user guess is correct output "You guessed it!" and skip to instruction 160
+120 if the user guess is too low output "That's too low. Try again..."
+130 add temp to listOfGuesses via collection
+140 if the user guess is too high output "That's too high. Try again..."
+150 add temp to listOfGuesses via collection
+150 go back to instruction 40
+160 DONE
+
+4. Test Cases
+
+Test Case #1: simplest test case
+
+What is being tested: the user guessing a number with a few mistakes such as repeating numbers, a number too high, and incorrect guesses
+Input values if any:
+Expected results:
+
+I'm thinking of a whole number from 1 to 100.
+What is your guess [1-100]? 50
+That's too high. Try again...
+What is your guess [1-100]? 30
+That's too high. Try again...
+What is your guess [1-100]? 5
+That's too low. Try again...
+What is your guess [1-100]? 30
+Sorry, 30 has already been guessed.
+What is your guess [1-100]? 150
+I really want a number between 1 and 100.
+What is your guess [1-100]? 7
+You guessed it!
+
+What is happening:
+
+0 Random number is generated
+Random number is 7
+10 Output user introduction
+user introduction
+20 Output intro message (different from introduction) "I'm thinking of a number from 1 to 10."
+"I'm thinking of a whole number from 1 to 100."
+30 inputValid = true
+40 prompt for user guess
+What is your guess [1-100]?
+50 input user's guess as temp
+user types 50 and pushes enter
+60 c = 0
+70 for c < nGuesses, c = c + 1
+80 if temp = listOfGuesses at index of c
+there are no guesses so it is impossible for 50 to have already been guessed
+90 if temp is not between 1-100 then output "I really want a number between 1 and 100." and set inputValid to false
+--50 is between 1 and 100 so inputValid is true
+100 if input is valid continue, if not skip to instruction 40
+continue
+110 if the user guess is correct output "You guessed it!" and skip to instruction 160
+--50 is not 7 so just go to 120
+120 if the user guess is too low output "That's too low. Try again..."
+--50 > 7
+130 add temp to listOfGuesses via collection
+don't do this
+140 if the user guess is too high output "That's too high. Try again..."
+--50 > 7
+"That's too high. Try again..."
+150 add temp to listOfGuesses via collection
+50 is added to list of guesses
+150 go back to instruction 40
+-----
+40 prompt for user guess
+What is your guess [1-100]?
+50 input user's guess as temp
+user types 30 and pushes enter
+60 c = 0
+70 for c < nGuesses, c = c + 1
+80 if temp = listOfGuesses at index of c
+there are no matches
+90 if temp is not between 1-100 then output "I really want a number between 1 and 100." and set inputValid to false
+--30 is between 1 and 100 so inputValid is true
+100 if input is valid continue, if not skip to instruction 40
+continue
+110 if the user guess is correct output "You guessed it!" and skip to instruction 160
+--30 is not 7 so just go to 120
+120 if the user guess is too low output "That's too low. Try again..."
+--30 > 7
+130 add temp to listOfGuesses via collection
+don't do this
+140 if the user guess is too high output "That's too high. Try again..."
+--30 > 7
+"That's too high. Try again..."
+150 add temp to listOfGuesses via collection
+--30 is added to list of guesses
+150 go back to instruction 40
+-----
+40 prompt for user guess
+What is your guess [1-100]?
+50 input user's guess as temp
+user types 5 and pushes enter
+60 c = 0
+70 for c < nGuesses, c = c + 1
+80 if temp = listOfGuesses at index of c
+there are no matches
+90 if temp is not between 1-100 then output "I really want a number between 1 and 100." and set inputValid to false
+--5 is between 1 and 100 so inputValid is true
+100 if input is valid continue, if not skip to instruction 40
+continue
+110 if the user guess is correct output "You guessed it!" and skip to instruction 160
+--5 is not 7 so just go to 120
+120 if the user guess is too low output "That's too low. Try again..."
+--5 < 7
+"That's too low. Try again..."
+130 add temp to listOfGuesses via collection
+--5 is added to listOfGuesses
+140 if the user guess is too high output "That's too high. Try again..."
+--50 > 7
+150 add temp to listOfGuesses via collection
+don't do this
+150 go back to instruction 40
+-----
+40 prompt for user guess
+What is your guess [1-100]?
+50 input user's guess as temp
+user types 30 and pushes enter
+60 c = 0
+70 for c < nGuesses, c = c + 1
+80 if temp = listOfGuesses at index of c
+--30 has a match
+go back to inst. 40
+-----
+40 prompt for user guess
+What is your guess [1-100]?
+50 input user's guess as temp
+user types 150 and pushes enter
+--150 is > 100 so it is invalid, go back to instruction 40
+-----
+40 prompt for user guess
+What is your guess [1-100]?
+50 input user's guess as temp
+user types 7 and pushes enter
+60 c = 0
+70 for c < nGuesses, c = c + 1
+80 if temp = listOfGuesses at index of c
+there are no matches
+90 if temp is not between 1-100 then output "I really want a number between 1 and 100." and set inputValid to false
+--7 is between 1 and 100 so inputValid is true
+100 if input is valid continue, if not skip to instruction 40
+continue
+110 if the user guess is correct output "You guessed it!" and skip to instruction 160
+--7 = 7
+"You guessed it!"
+skip to instruction 160
+160 DONE
